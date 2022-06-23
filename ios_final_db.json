@@ -1,0 +1,1025 @@
+{
+  "ITEMS" : {
+    "item1" : {
+      "category" : "WRITING",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Great value ,Easy to use,Sleeve with rounded corner edges keeps sleeve from tearing during use",
+      "image" : "Eraser1.png",
+      "name" : "Radar S-60 Eraser",
+      "price" : "7",
+      "remainingStock" : "50"
+    },
+    "item10" : {
+      "category" : "NOTES",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Classic design,Perfect for messages,Greener choice",
+      "image" : "NOTES1.jpeg",
+      "name" : "Post-it 654 Yellow Notes 3 inch x 3 inch",
+      "price" : "20",
+      "remainingStock" : "40"
+    },
+    "item11" : {
+      "category" : "NOTES",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Popular notebook,Paper is smooth to write,Rounded corners for better protection",
+      "image" : "notes2.jpeg",
+      "name" : "Gambol S5807 Wire Notebook Assorted Colour A5 - 80 Sheets",
+      "price" : "23",
+      "remainingStock" : "30"
+    },
+    "item12" : {
+      "category" : "NOTES",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Helps you to locate where each signature is needed,Sticks securely and removes cleanly,Dispenser keeps flags at your fingertips",
+      "image" : "notes3.jpeg",
+      "name" : "Post-it 680-SH2 Printed Flag (Sign Here) 1 inch x 1.75 inch",
+      "price" : "43",
+      "remainingStock" : 28
+    },
+    "item13" : {
+      "category" : "NOTES",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Perfect for marking,Easy to write on,Made of 100% recycled paper",
+      "image" : "notes4.jpeg",
+      "name" : "Post-it 560RP-R Recycled Page Marker 0.5 inch x 3 inch",
+      "price" : "50",
+      "remainingStock" : "30"
+    },
+    "item14" : {
+      "category" : "NOTES",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "High quality paper for smooth and fast writing,Practical two-column design,Ideal for taking notes and marking to-do lists",
+      "image" : "notes5.jpeg",
+      "name" : "National Steno Notebook Yellow 6 inch x 9 inch - 80 Sheets",
+      "price" : "43",
+      "remainingStock" : "30"
+    },
+    "item15" : {
+      "category" : "NOTES",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Great value,Durable cover for better protection,Available in various sizes",
+      "image" : "notes6.jpeg",
+      "name" : "Hard Cover Book #2210 6 inch x 8 inch - 100 Sheets",
+      "price" : "60",
+      "remainingStock" : "30"
+    },
+    "item16" : {
+      "category" : "OTHERS",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Strong but easy to cut with your hands,Low static electricity reduces attraction to paper,Economical 8-roll pack",
+      "image" : "others1.jpeg",
+      "name" : "Panfix Adhesive Tape 0.75 inch x 25yd - Tube of 8",
+      "price" : "20",
+      "remainingStock" : "30"
+    },
+    "item17" : {
+      "category" : "OTHERS",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Clean, re-usable mastic adhesive with a multitude of uses,Easily removable,Non-toxic formulation",
+      "image" : "others2.jpeg",
+      "name" : "Bostik Blu-Tack Blue 75g",
+      "price" : "25",
+      "remainingStock" : "40"
+    },
+    "item18" : {
+      "category" : "OTHERS",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Professional black and silver outlook,Keeps stacks of loose paper fastened together,With paper box for easy storage",
+      "image" : "others4.jpeg",
+      "name" : "Black Fold Back Clip 1 inch - Box of 12",
+      "price" : "30",
+      "remainingStock" : "40"
+    },
+    "item19" : {
+      "category" : "OTHERS",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Practical and economical,Sharp and durable,Assorted colour",
+      "image" : "others3.jpeg",
+      "name" : "Scissors 16cm",
+      "price" : "15",
+      "remainingStock" : "50"
+    },
+    "item2" : {
+      "category" : "WRITING",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Economical choice,Suitable for fax paper, carbon copies etc,Flat body will not roll away",
+      "image" : "WRITING2.jpeg",
+      "name" : "Lyreco Budget Highlighter Yellow",
+      "price" : "10",
+      "remainingStock" : "30"
+    },
+    "item20" : {
+      "category" : "OTHERS",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Light plastic handle,Ideal for offices and schools,Assorted colour",
+      "image" : "others5.jpeg",
+      "name" : "D803 Cutter L",
+      "price" : "11",
+      "remainingStock" : "40"
+    },
+    "item3" : {
+      "category" : "WRITING",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Classic design,Supreme quality,Comfort writing",
+      "image" : "WRITING3.jpeg",
+      "name" : "Uni-ball Laknock Retractable Ball Pen 0.7mm Blue",
+      "price" : "12",
+      "remainingStock" : 28
+    },
+    "item4" : {
+      "category" : "WRITING",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Double-ended marker with fine and extra fine tips,Quick drying oil-based ink,Suitable for many surfaces",
+      "image" : "WRITING4.jpeg",
+      "name" : "Zebra Ex-Mckee Marker Black",
+      "price" : "7",
+      "remainingStock" : 22
+    },
+    "item5" : {
+      "category" : "WRITING",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Pencil with eraser,Classic design and high quality,Economical pencils",
+      "image" : "writing5.jpeg",
+      "name" : "Chung Hwa 6151 HB Pencil - Box of 12",
+      "price" : "5",
+      "remainingStock" : "50"
+    },
+    "item6" : {
+      "category" : "LABELS",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Self-adhesive labels,Easy to peel,Model: 244",
+      "image" : "LABELS1.jpeg",
+      "name" : "A Labels 244 10 x 20mm - Pack of 1680",
+      "price" : "20",
+      "remainingStock" : "50"
+    },
+    "item7" : {
+      "category" : "LABELS",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "70 labels per sheet, 420 labels per box,Highlight important information ,Fast application & reliable adhesion",
+      "image" : "labels2.jpeg",
+      "name" : "Avery Dot Label Assorted Colour 8mm - Pack of 420",
+      "price" : "25",
+      "remainingStock" : "50"
+    },
+    "item8" : {
+      "category" : "LABELS",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Label remover easy to use and very efficient in just 5 minutes,The brush actuator helps to remove glue residus for the perfect finish,Can be used on a multitude of surfaces",
+      "image" : "labels3.jpeg",
+      "name" : "Lyreco Label Remover 200ml",
+      "price" : "40",
+      "remainingStock" : "25"
+    },
+    "item9" : {
+      "category" : "LABELS",
+      "comments" : {
+        "2020-06-01Helen" : {
+          "date" : "2020-06-01",
+          "description" : "Great quality!",
+          "rate" : "5",
+          "userName" : "Helen"
+        },
+        "2020-06-12Kelen" : {
+          "date" : "2020-06-12",
+          "description" : "Nice Item!",
+          "rate" : "4",
+          "userName" : "Kelen"
+        },
+        "2020-07-22Mary" : {
+          "date" : "2020-07-22",
+          "description" : "My favorite shop :)",
+          "rate" : "5",
+          "userName" : "Mary"
+        },
+        "2020-07-23Dame" : {
+          "date" : "2020-07-23",
+          "description" : "GOOD",
+          "rate" : "5",
+          "userName" : "Dame"
+        },
+        "2020-11-23Sam" : {
+          "date" : "2020-11-23",
+          "description" : "Expensive",
+          "rate" : "3",
+          "userName" : "Sam"
+        }
+      },
+      "description" : "Easier to peel & faster to apply with unique QuickPEEL™ feature,Guaranteed to be JamFree™ - no printer jams,Made from FSC certified paper",
+      "image" : "labels4.jpeg",
+      "name" : "Avery L7163-100 Laser Label 99.1x38.1mm - Box of 1400 Labels",
+      "price" : "50",
+      "remainingStock" : "30"
+    }
+  },
+  "ORDERS" : {
+    "OR1" : {
+      "cost" : "1000",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-02",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Mastor",
+      "pickupMethod" : "shipping",
+      "status" : "complete"
+    },
+    "OR10" : {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+      "status" : "progress"
+    },
+    "OR11" : {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+      "status" : "progress"
+    },
+    "OR12" : {
+      "cost" : 45,
+      "custId" : "eLU1IygRgtYv5WYYPl3qJA8UK9X2",
+      "date" : "2021-4-17",
+      "orderItems" : {
+        "item3" : {
+          "cost" : "12",
+          "quantity" : 2
+        },
+        "item4" : {
+          "cost" : "7",
+          "quantity" : 3
+        }
+      },
+      "paymentMethod" : "VISA",
+      "pickupMethod" : "shipping",
+      "status" : "progress"
+    },
+    "OR2" : {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-02",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Mastor",
+      "pickupMethod" : "shipping",
+      "status" : "cancel"
+    },
+    "OR3" : {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+      "status" : "progress"
+    },
+    "OR4" : {
+      "cost" : 120,
+      "custId" : "eLU1IygRgtYv5WYYPl3qJA8UK9X2",
+      "date" : "2021-4-17",
+      "orderItems" : {
+        "item8" : {
+          "cost" : "40",
+          "quantity" : 3
+        }
+      },
+      "paymentMethod" : "Master",
+      "pickupMethod" : "in-store pickup",
+      "status" : "progress"
+    },
+    "OR5" : {
+      "cost" : 86,
+      "custId" : "eLU1IygRgtYv5WYYPl3qJA8UK9X2",
+      "date" : "2021-4-17",
+      "orderItems" : {
+        "item12" : {
+          "cost" : "43",
+          "quantity" : 2
+        }
+      },
+      "paymentMethod" : "Master",
+      "pickupMethod" : "in-store pickup",
+      "status" : "progress"
+    },
+    "OR6" : {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+      "status" : "cancel"
+    },
+    "OR7" : {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+      "status" : "complete"
+    },
+    "OR8" : {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+      "status" : "complete"
+    },
+    "OR9" : {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+      "status" : "cancel"
+    }
+  },
+  "cart_items" : [ {
+    "id" : "tI9qKKyj2vU24Twws6zgaYIvPTx1"
+    "itemID" : "item6",
+    "price" : "20",
+    "quantity" : 2
+  }, {
+    "id" : "tI9qKKyj2vU24Twws6zgaYIvPTx1"
+    "itemID" : "item4",
+    "price" : "7",
+    "quantity" : "1"
+  } ]
+}
