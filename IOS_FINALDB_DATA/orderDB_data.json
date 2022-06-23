@@ -1,0 +1,138 @@
+[  {
+      "cost" : "1000",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-02",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Mastor",
+      "pickupMethod" : "shipping",
+	  "Address" : "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)",
+      "status" : "complete"
+    },{
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+	    "Address" : "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)",
+      "status" : "progress"
+    }, {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+	    "Address" : "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)",
+      "status" : "progress"
+    }, {
+      "cost" : 45,
+      "custId" : "eLU1IygRgtYv5WYYPl3qJA8UK9X2",
+      "date" : "2021-4-17",
+      "orderItems" : {
+        "item3" : {
+          "cost" : "12",
+          "quantity" : 2
+        },
+        "item4" : {
+          "cost" : "7",
+          "quantity" : 3
+        }
+      },
+      "paymentMethod" : "VISA",
+      "pickupMethod" : "shipping",
+	    "Address" : "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)",
+      "status" : "progress"
+    }, {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-02",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Mastor",
+      "pickupMethod" : "shipping",
+	    "Address" : "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)",
+      "status" : "cancel"
+    }, {
+      "cost" : "25",
+      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
+      "date" : "2021-01-05",
+      "orderItems" : {
+        "item1" : {
+          "cost" : "10",
+          "quantity" : "2"
+        },
+        "item10" : {
+          "cost" : "10",
+          "quantity" : "1"
+        }
+      },
+      "paymentMethod" : "Visa",
+      "pickupMethod" : "shipping",
+	    "Address" : "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)",
+      "status" : "progress"
+    },{
+      "cost" : 120,
+      "custId" : "eLU1IygRgtYv5WYYPl3qJA8UK9X2",
+      "date" : "2021-4-17",
+      "orderItems" : {
+        "item8" : {
+          "cost" : "40",
+          "quantity" : 3
+        }
+      },
+      "paymentMethod" : "Master",
+      "pickupMethod" : "in-store pickup",
+	    "Address" : "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)",
+      "status" : "progress"
+    },{
+      "cost" : 86,
+      "custId" : "eLU1IygRgtYv5WYYPl3qJA8UK9X2",
+      "date" : "2021-4-17",
+      "orderItems" : {
+        "item12" : {
+          "cost" : "43",
+          "quantity" : 2
+        }
+      },
+      "paymentMethod" : "Master",
+      "pickupMethod" : "in-store pickup",
+	  "Address" : "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)",
+      "status" : "progress"
+    }
+ ]

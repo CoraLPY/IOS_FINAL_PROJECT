@@ -1,0 +1,11 @@
+[ {
+    "custID" : "tI9qKKyj2vU24Twws6zgaYIvPTx1",
+    "itemID" : "item6",
+    "price" : "20",
+    "quantity" : 2
+  }, {
+    "custID" : "tI9qKKyj2vU24Twws6zgaYIvPTx1",
+    "itemID" : "item4",
+    "price" : "7",
+    "quantity" : "1"
+  }]

@@ -1,6 +1,4 @@
-{
-  "ITEMS" : {
-    "item1" : {
+[ {
       "category" : "WRITING",
       "comments" : {
         "2020-06-01Helen" : {
@@ -40,7 +38,7 @@
       "price" : "7",
       "remainingStock" : "50"
     },
-    "item10" : {
+	{
       "category" : "NOTES",
       "comments" : {
         "2020-06-01Helen" : {
@@ -80,7 +78,7 @@
       "price" : "20",
       "remainingStock" : "40"
     },
-    "item11" : {
+     {
       "category" : "NOTES",
       "comments" : {
         "2020-06-01Helen" : {
@@ -120,7 +118,7 @@
       "price" : "23",
       "remainingStock" : "30"
     },
-    "item12" : {
+    {
       "category" : "NOTES",
       "comments" : {
         "2020-06-01Helen" : {
@@ -160,7 +158,7 @@
       "price" : "43",
       "remainingStock" : 28
     },
-    "item13" : {
+ {
       "category" : "NOTES",
       "comments" : {
         "2020-06-01Helen" : {
@@ -200,7 +198,7 @@
       "price" : "50",
       "remainingStock" : "30"
     },
-    "item14" : {
+   {
       "category" : "NOTES",
       "comments" : {
         "2020-06-01Helen" : {
@@ -240,7 +238,7 @@
       "price" : "43",
       "remainingStock" : "30"
     },
-    "item15" : {
+ {
       "category" : "NOTES",
       "comments" : {
         "2020-06-01Helen" : {
@@ -280,7 +278,7 @@
       "price" : "60",
       "remainingStock" : "30"
     },
-    "item16" : {
+ {
       "category" : "OTHERS",
       "comments" : {
         "2020-06-01Helen" : {
@@ -320,7 +318,7 @@
       "price" : "20",
       "remainingStock" : "30"
     },
-    "item17" : {
+ {
       "category" : "OTHERS",
       "comments" : {
         "2020-06-01Helen" : {
@@ -360,7 +358,7 @@
       "price" : "25",
       "remainingStock" : "40"
     },
-    "item18" : {
+ {
       "category" : "OTHERS",
       "comments" : {
         "2020-06-01Helen" : {
@@ -400,7 +398,7 @@
       "price" : "30",
       "remainingStock" : "40"
     },
-    "item19" : {
+{
       "category" : "OTHERS",
       "comments" : {
         "2020-06-01Helen" : {
@@ -440,7 +438,7 @@
       "price" : "15",
       "remainingStock" : "50"
     },
-    "item2" : {
+{
       "category" : "WRITING",
       "comments" : {
         "2020-06-01Helen" : {
@@ -480,7 +478,7 @@
       "price" : "10",
       "remainingStock" : "30"
     },
-    "item20" : {
+ {
       "category" : "OTHERS",
       "comments" : {
         "2020-06-01Helen" : {
@@ -520,7 +518,7 @@
       "price" : "11",
       "remainingStock" : "40"
     },
-    "item3" : {
+{
       "category" : "WRITING",
       "comments" : {
         "2020-06-01Helen" : {
@@ -560,7 +558,7 @@
       "price" : "12",
       "remainingStock" : 28
     },
-    "item4" : {
+ {
       "category" : "WRITING",
       "comments" : {
         "2020-06-01Helen" : {
@@ -599,8 +597,7 @@
       "name" : "Zebra Ex-Mckee Marker Black",
       "price" : "7",
       "remainingStock" : 22
-    },
-    "item5" : {
+    }, {
       "category" : "WRITING",
       "comments" : {
         "2020-06-01Helen" : {
@@ -639,8 +636,7 @@
       "name" : "Chung Hwa 6151 HB Pencil - Box of 12",
       "price" : "5",
       "remainingStock" : "50"
-    },
-    "item6" : {
+    }, {
       "category" : "LABELS",
       "comments" : {
         "2020-06-01Helen" : {
@@ -679,8 +675,7 @@
       "name" : "A Labels 244 10 x 20mm - Pack of 1680",
       "price" : "20",
       "remainingStock" : "50"
-    },
-    "item7" : {
+    }, {
       "category" : "LABELS",
       "comments" : {
         "2020-06-01Helen" : {
@@ -719,8 +714,7 @@
       "name" : "Avery Dot Label Assorted Colour 8mm - Pack of 420",
       "price" : "25",
       "remainingStock" : "50"
-    },
-    "item8" : {
+    }, {
       "category" : "LABELS",
       "comments" : {
         "2020-06-01Helen" : {
@@ -759,8 +753,7 @@
       "name" : "Lyreco Label Remover 200ml",
       "price" : "40",
       "remainingStock" : "25"
-    },
-    "item9" : {
+    }, {
       "category" : "LABELS",
       "comments" : {
         "2020-06-01Helen" : {
@@ -799,227 +792,4 @@
       "name" : "Avery L7163-100 Laser Label 99.1x38.1mm - Box of 1400 Labels",
       "price" : "50",
       "remainingStock" : "30"
-    }
-  },
-  "ORDERS" : {
-    "OR1" : {
-      "cost" : "1000",
-      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-      "date" : "2021-01-02",
-      "orderItems" : {
-        "item1" : {
-          "cost" : "10",
-          "quantity" : "2"
-        },
-        "item10" : {
-          "cost" : "10",
-          "quantity" : "1"
-        }
-      },
-      "paymentMethod" : "Mastor",
-      "pickupMethod" : "shipping",
-      "status" : "complete"
-    },
-    "OR10" : {
-      "cost" : "25",
-      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-      "date" : "2021-01-05",
-      "orderItems" : {
-        "item1" : {
-          "cost" : "10",
-          "quantity" : "2"
-        },
-        "item10" : {
-          "cost" : "10",
-          "quantity" : "1"
-        }
-      },
-      "paymentMethod" : "Visa",
-      "pickupMethod" : "shipping",
-      "status" : "progress"
-    },
-    "OR11" : {
-      "cost" : "25",
-      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-      "date" : "2021-01-05",
-      "orderItems" : {
-        "item1" : {
-          "cost" : "10",
-          "quantity" : "2"
-        },
-        "item10" : {
-          "cost" : "10",
-          "quantity" : "1"
-        }
-      },
-      "paymentMethod" : "Visa",
-      "pickupMethod" : "shipping",
-      "status" : "progress"
-    },
-    "OR12" : {
-      "cost" : 45,
-      "custId" : "eLU1IygRgtYv5WYYPl3qJA8UK9X2",
-      "date" : "2021-4-17",
-      "orderItems" : {
-        "item3" : {
-          "cost" : "12",
-          "quantity" : 2
-        },
-        "item4" : {
-          "cost" : "7",
-          "quantity" : 3
-        }
-      },
-      "paymentMethod" : "VISA",
-      "pickupMethod" : "shipping",
-      "status" : "progress"
-    },
-    "OR2" : {
-      "cost" : "25",
-      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-      "date" : "2021-01-02",
-      "orderItems" : {
-        "item1" : {
-          "cost" : "10",
-          "quantity" : "2"
-        },
-        "item10" : {
-          "cost" : "10",
-          "quantity" : "1"
-        }
-      },
-      "paymentMethod" : "Mastor",
-      "pickupMethod" : "shipping",
-      "status" : "cancel"
-    },
-    "OR3" : {
-      "cost" : "25",
-      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-      "date" : "2021-01-05",
-      "orderItems" : {
-        "item1" : {
-          "cost" : "10",
-          "quantity" : "2"
-        },
-        "item10" : {
-          "cost" : "10",
-          "quantity" : "1"
-        }
-      },
-      "paymentMethod" : "Visa",
-      "pickupMethod" : "shipping",
-      "status" : "progress"
-    },
-    "OR4" : {
-      "cost" : 120,
-      "custId" : "eLU1IygRgtYv5WYYPl3qJA8UK9X2",
-      "date" : "2021-4-17",
-      "orderItems" : {
-        "item8" : {
-          "cost" : "40",
-          "quantity" : 3
-        }
-      },
-      "paymentMethod" : "Master",
-      "pickupMethod" : "in-store pickup",
-      "status" : "progress"
-    },
-    "OR5" : {
-      "cost" : 86,
-      "custId" : "eLU1IygRgtYv5WYYPl3qJA8UK9X2",
-      "date" : "2021-4-17",
-      "orderItems" : {
-        "item12" : {
-          "cost" : "43",
-          "quantity" : 2
-        }
-      },
-      "paymentMethod" : "Master",
-      "pickupMethod" : "in-store pickup",
-      "status" : "progress"
-    },
-    "OR6" : {
-      "cost" : "25",
-      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-      "date" : "2021-01-05",
-      "orderItems" : {
-        "item1" : {
-          "cost" : "10",
-          "quantity" : "2"
-        },
-        "item10" : {
-          "cost" : "10",
-          "quantity" : "1"
-        }
-      },
-      "paymentMethod" : "Visa",
-      "pickupMethod" : "shipping",
-      "status" : "cancel"
-    },
-    "OR7" : {
-      "cost" : "25",
-      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-      "date" : "2021-01-05",
-      "orderItems" : {
-        "item1" : {
-          "cost" : "10",
-          "quantity" : "2"
-        },
-        "item10" : {
-          "cost" : "10",
-          "quantity" : "1"
-        }
-      },
-      "paymentMethod" : "Visa",
-      "pickupMethod" : "shipping",
-      "status" : "complete"
-    },
-    "OR8" : {
-      "cost" : "25",
-      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-      "date" : "2021-01-05",
-      "orderItems" : {
-        "item1" : {
-          "cost" : "10",
-          "quantity" : "2"
-        },
-        "item10" : {
-          "cost" : "10",
-          "quantity" : "1"
-        }
-      },
-      "paymentMethod" : "Visa",
-      "pickupMethod" : "shipping",
-      "status" : "complete"
-    },
-    "OR9" : {
-      "cost" : "25",
-      "custId" : "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-      "date" : "2021-01-05",
-      "orderItems" : {
-        "item1" : {
-          "cost" : "10",
-          "quantity" : "2"
-        },
-        "item10" : {
-          "cost" : "10",
-          "quantity" : "1"
-        }
-      },
-      "paymentMethod" : "Visa",
-      "pickupMethod" : "shipping",
-      "status" : "cancel"
-    }
-  },
-  "cart_items" : [ {
-    "id" : "tI9qKKyj2vU24Twws6zgaYIvPTx1"
-    "itemID" : "item6",
-    "price" : "20",
-    "quantity" : 2
-  }, {
-    "id" : "tI9qKKyj2vU24Twws6zgaYIvPTx1"
-    "itemID" : "item4",
-    "price" : "7",
-    "quantity" : "1"
-  } ]
-}
+    }]
