@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD3E92D52865A6B700A98E60 /* itemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E92D42865A6B700A98E60 /* itemViewModel.swift */; };
+		AD3E92D72865CCCC00A98E60 /* SearchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3E92D62865CCCB00A98E60 /* SearchItemView.swift */; };
 		AD54F0312855BA9D0077FD0A /* IOS_FINALApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54F0302855BA9D0077FD0A /* IOS_FINALApp.swift */; };
 		AD54F0332855BA9D0077FD0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD54F0322855BA9D0077FD0A /* ContentView.swift */; };
 		AD54F0352855BAA10077FD0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD54F0342855BAA10077FD0A /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD3E92D42865A6B700A98E60 /* itemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemViewModel.swift; sourceTree = "<group>"; };
+		AD3E92D62865CCCB00A98E60 /* SearchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemView.swift; sourceTree = "<group>"; };
 		AD54F02D2855BA9D0077FD0A /* IOS_FINAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_FINAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD54F0302855BA9D0077FD0A /* IOS_FINALApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_FINALApp.swift; sourceTree = "<group>"; };
 		AD54F0322855BA9D0077FD0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				ADF9B07B28656BEA00A2D930 /* Item.swift */,
 				ADF9B07D28656C7600A2D930 /* Comment.swift */,
 				ADF9B083286579BE00A2D930 /* Cart_Item.swift */,
+				AD3E92D42865A6B700A98E60 /* itemViewModel.swift */,
+				AD3E92D62865CCCB00A98E60 /* SearchItemView.swift */,
 			);
 			path = IOS_FINAL;
 			sourceTree = "<group>";
@@ -315,9 +321,11 @@
 				AD54F0332855BA9D0077FD0A /* ContentView.swift in Sources */,
 				AD54F0312855BA9D0077FD0A /* IOS_FINALApp.swift in Sources */,
 				ADF9B0782864E9F100A2D930 /* PagingView.swift in Sources */,
+				AD3E92D72865CCCC00A98E60 /* SearchItemView.swift in Sources */,
 				ADF9B07E28656C7600A2D930 /* Comment.swift in Sources */,
 				AD7EE2872864E24C0087134B /* HomeView.swift in Sources */,
 				E1BD67CE2864654A00EA40E8 /* RegistrationView.swift in Sources */,
+				AD3E92D52865A6B700A98E60 /* itemViewModel.swift in Sources */,
 				ADF9B07A28654F9F00A2D930 /* CategoryView.swift in Sources */,
 				E1BD67D02864681D00EA40E8 /* ProductBoxView.swift in Sources */,
 			);
@@ -478,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IOS_FINAL/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Q29XVRXYF9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -507,7 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IOS_FINAL/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Q29XVRXYF9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

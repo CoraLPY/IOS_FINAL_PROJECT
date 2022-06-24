@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 struct Item: Codable, Identifiable,Equatable {
     @DocumentID var id: String?
     let category: String
-    let comments: [Comment]?
+    let comments:[Comment]?
     let description: String
     let image:String
     let name: String

@@ -22,11 +22,17 @@ struct HomeView: View {
            "OTHERS"
        ]
     
-    //@FirestoreQuery(collectionPath: "ITEMS", predicates: [.order(by: "name", descending: true)])
+    @FirestoreQuery(collectionPath: "ITEMS", predicates: [.order(by: "name", descending: true),.limitTo(6)])
+    fileprivate var itemResults:Result<[Item], Error>
     
-    @FirestoreQuery(collectionPath: "CART_ITEMS", predicates: [.order(by: "CustID", descending: true)])
-   // fileprivate var itemResults:Result<[Item], Error>
-    fileprivate var cartItemResults:Result<[Cart_Item], Error>
+    @State private var keyword: String = ""
+    @State private var selectedCategory: String = "ALL"
+    
+    @State private var isEditing = false
+    
+    @State var isSearch = false
+    @State var isCategory = false
+
     
     var body: some View {
         TabView{
@@ -67,50 +73,120 @@ struct HomeView: View {
         
     }
     
+    var searchBar: some View{
+        HStack {
+
+                    TextField("Search ...", text: $keyword)
+                        .padding(7)
+                        .padding(.horizontal, 25)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+
+                        .onSubmit{
+                            print(keyword)
+                            isSearch = true
+                            
+                            
+                        }
+                        .submitLabel(.done)
+            
+                        .overlay(
+                            HStack {
+                                Image(systemName: "magnifyingglass")
+                                    .foregroundColor(.gray)
+                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 8)
+
+                                if isEditing {
+                                    Button(action: {
+                                        self.keyword = ""
+                                        self.isEditing = false
+                                        //UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                                        
+                                    }) {
+                                        Image(systemName: "multiply.circle.fill")
+                                            .foregroundColor(.gray)
+                                            .padding(.trailing, 8)
+                                    }
+                                }
+                            }
+                        )
+                        .padding(.horizontal, 10)
+                        .onTapGesture {
+                            self.isEditing = true
+                        }
+
+                    if isEditing {
+    
+                        NavigationLink(destination: SearchItemView(keyword: $keyword, selectedCategory: $selectedCategory), isActive: $isSearch) {
+                            Image(systemName: "paperplane")
+                                .foregroundColor(.gray)
+                                .padding(.trailing, 10)
+                                .transition(.move(edge: .trailing))
+                                .animation(.default)
+                        }
+                       
+                    }
+                }
+    }
+    
+    
     var homePage: some View {
         NavigationView {
         ScrollView{
             VStack{
+                searchBar
                 banner
     
                 //category button
                 let columns = Array(repeating: GridItem(spacing: 0), count: 4)
                 LazyVGrid(columns: columns) {
                     ForEach(category.indices, id: \.self) { item in
-                      NavigationLink {
-                            Image(category[item])
-                                .resizable()
-                                .scaledToFit()
+
+                      NavigationLink(isActive: $isCategory) {
+                          SearchItemView(keyword: $keyword, selectedCategory: $selectedCategory)
                     } label: {
-                        CategoryView(category: category[item])
+                        Button(action: {
+                                        selectedCategory = category[item]
+                                    //print(selectedCategory)
+                                        isCategory = true
+                                       }, label: {
+                                           CategoryView(category: category[item])
+                                       })
+                        
                     }
 
                             
                     }
                 }
+                
                 //random recommended products
                 Text("RECOMMENDED RPODUCTS:")
                     .foregroundColor(Color.blue)
                 
-                if case let .success(items) = cartItemResults {
+                if case let .success(items) = itemResults {
                     let itemColumns = Array(repeating: GridItem(), count: 2)
                     LazyVGrid(columns: itemColumns) {
                         ForEach(items) { item in
-                            NavigationLink {
-                                Text(item.custID)
+                            
+                           NavigationLink {
+                               Text(item.id ?? "null")
                           } label: {
-                              Text(item.custID)
-                             /* ProductBoxView(imageName: item.image, itemName: item.name, price: Int(item.price) ?? 0 , qty: Int(item.remainingStock) ?? 0)*/
+                              ProductBoxView(imageName: item.image, itemName: item.name, price: Int(item.price) ?? 0 , qty: Int(item.remainingStock) ?? 0)
                           }
                             
                         }
                     }
 
-                } else if case let .failure(error) = cartItemResults {
+                } else if case let .failure(error) = itemResults {
                     // Handle error
+                    let _ = print(error)
                     Text("Couldn't map data: \(error.localizedDescription)")
+                   
                   }
+
              
+                
                 Spacer()
                 
                 }
@@ -119,7 +195,7 @@ struct HomeView: View {
     }
     }
     
-    
+
     
 }
 
