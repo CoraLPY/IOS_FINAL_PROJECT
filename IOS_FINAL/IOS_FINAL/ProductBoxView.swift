@@ -8,23 +8,20 @@
 import SwiftUI
 
 struct ProductBoxView: View {
-    let imageName: String
-    let itemName: String
-    let price: Int
-    let qty: Int
+    let item: Item
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image(imageName)
+            Image(item.image)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150, height: 150)
             
-            Text(itemName)
+            Text(item.name)
             
-            Text("Price:$ \(price)")
+            Text("Price: \(item.price)")
             
-            Text("Qty: \(qty)")
+            Text("Qty: \(item.remainingStock)")
         }
         .padding()
         .border(Color.black)
@@ -33,6 +30,8 @@ struct ProductBoxView: View {
 
 struct ProductBoxView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductBoxView(imageName: "notes1", itemName: "Notes 1", price: 10, qty: 1)
+        HStack {
+            ProductBoxView(item: Item(category: "NOTES", comments: [], description: "Prof sticky notes", image: "notes1", name: "Yellow Sticky notes", price: 10, remainingStock: 30))
+        }
     }
 }
