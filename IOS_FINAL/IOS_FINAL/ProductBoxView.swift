@@ -22,7 +22,7 @@ struct ProductBoxView: View {
             
             Text(itemName)
             
-            Text("Price: \(price)")
+            Text("Price:$ \(price)")
             
             Text("Qty: \(qty)")
         }
