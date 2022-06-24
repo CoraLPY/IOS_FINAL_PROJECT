@@ -74,7 +74,7 @@ struct ProductDetailView: View {
                     Spacer()
                     
                     VStack(alignment: .leading) {
-                        ForEach(item.comments) { comment in
+                        ForEach(item.comments ?? []) { comment in
                             CommentView(comment: comment)
                         }
                     }

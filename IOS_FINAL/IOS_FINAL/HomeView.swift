@@ -15,18 +15,18 @@ struct HomeView: View {
     @State var index = 0
     var bannerImages = ["promotion1", "promotion2", "promotion3"]
     let category = [
-           "ALL",
-           "LABELS",
-           "NOTES",
-           "WRITING",
-           "OTHERS"
-       ]
+       "ALL",
+       "LABELS",
+       "NOTES",
+       "WRITING",
+       "OTHERS"
+   ]
     
     //@FirestoreQuery(collectionPath: "ITEMS", predicates: [.order(by: "name", descending: true)])
     
     @FirestoreQuery(collectionPath: "CART_ITEMS", predicates: [.order(by: "CustID", descending: true)])
    // fileprivate var itemResults:Result<[Item], Error>
-    fileprivate var cartItemResults:Result<[Cart_Item], Error>
+    fileprivate var cartItemResults:Result<[CartItem], Error>
     
     var body: some View {
         TabView{
@@ -72,7 +72,6 @@ struct HomeView: View {
         ScrollView{
             VStack{
                 banner
-    
                 //category button
                 let columns = Array(repeating: GridItem(spacing: 0), count: 4)
                 LazyVGrid(columns: columns) {
@@ -81,15 +80,13 @@ struct HomeView: View {
                             Image(category[item])
                                 .resizable()
                                 .scaledToFit()
-                    } label: {
+                      } label: {
                         CategoryView(category: category[item])
-                    }
-
-                            
+                      }
                     }
                 }
                 //random recommended products
-                Text("RECOMMENDED RPODUCTS:")
+                Text("RECOMMENDED PRODUCTS:")
                     .foregroundColor(Color.blue)
                 
                 if case let .success(items) = cartItemResults {
@@ -98,32 +95,24 @@ struct HomeView: View {
                         ForEach(items) { item in
                             NavigationLink {
                                 Text(item.custID)
-                          } label: {
+                            } label: {
                               Text(item.custID)
                              /* ProductBoxView(imageName: item.image, itemName: item.name, price: Int(item.price) ?? 0 , qty: Int(item.remainingStock) ?? 0)*/
-                          }
-                            
+                            }
                         }
                     }
-
                 } else if case let .failure(error) = cartItemResults {
                     // Handle error
                     Text("Couldn't map data: \(error.localizedDescription)")
-                  }
-             
+                }
+                
                 Spacer()
                 
                 }
-            
             }
+        }
     }
-    }
-    
-    
-    
 }
-
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

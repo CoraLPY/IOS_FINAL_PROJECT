@@ -24,7 +24,7 @@ struct CommentView: View {
             Spacer()
             VStack(alignment: .leading) {
                 HStack {
-                    ForEach(0..<comment.rate) { _ in
+                    ForEach(0..<comment.rate, id:\.self) { _ in
                         Image(systemName: "star.fill")
                             .foregroundColor(.yellow)
                     }
