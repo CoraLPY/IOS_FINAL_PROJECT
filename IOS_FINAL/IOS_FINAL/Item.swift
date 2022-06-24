@@ -8,13 +8,13 @@
 import Firebase
 import FirebaseFirestoreSwift
 
-struct Item: Codable, Identifiable,Equatable {
+struct Item: Codable, Identifiable, Equatable {
     @DocumentID var id: String?
     let category: String
     let comments:[Comment]?
     let description: String
-    let image:String
+    let image: String
     let name: String
-    let price: String
-    let remainingStock: String
+    let price: Int
+    let remainingStock: Int
 }

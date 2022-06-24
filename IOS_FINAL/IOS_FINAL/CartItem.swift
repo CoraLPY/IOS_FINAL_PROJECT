@@ -8,10 +8,14 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Cart_Item: Codable, Identifiable,Equatable {
+struct CartItem: Codable, Identifiable, Equatable {
     @DocumentID var id: String?
     let custID: String
     let itemID: String
-    let price:String
+    let price: Int
     let quantity: Int
+    
+    func getTotalPrice() -> Int {
+        return price * quantity
+    }
 }

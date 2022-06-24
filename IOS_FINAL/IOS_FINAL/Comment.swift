@@ -8,12 +8,19 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct  Comment: Codable, Identifiable,Equatable {
-    @DocumentID var id: String?
+struct  Comment: Codable, Identifiable, Equatable {
+    var id: UUID = UUID()
     let date: String
     let description: String
-    let rate: String
-    let userName:String
-    
+    let rate: Int
+    let userName: String
 }
 
+<<<<<<< HEAD
+=======
+/*
+extension Comment {  
+    static let demoComment=Comment(date: "2022-5-22", description: "Good", rate: "5", userName: "Mary")
+}
+*/
+>>>>>>> 40045c2740bb895aaf124fd91c4651a5791e1c2b

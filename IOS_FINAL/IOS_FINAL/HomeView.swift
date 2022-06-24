@@ -15,16 +15,17 @@ struct HomeView: View {
     @State var index = 0
     var bannerImages = ["promotion1", "promotion2", "promotion3"]
     let category = [
-           "ALL",
-           "LABELS",
-           "NOTES",
-           "WRITING",
-           "OTHERS"
-       ]
+       "ALL",
+       "LABELS",
+       "NOTES",
+       "WRITING",
+       "OTHERS"
+   ]
     
     @FirestoreQuery(collectionPath: "ITEMS", predicates: [.order(by: "name", descending: true),.limitTo(6)])
     fileprivate var itemResults:Result<[Item], Error>
     
+
     @State private var keyword: String = ""
     @State private var selectedCategory: String = "ALL"
     
@@ -137,11 +138,11 @@ struct HomeView: View {
             VStack{
                 searchBar
                 banner
-    
                 //category button
                 let columns = Array(repeating: GridItem(spacing: 0), count: 4)
                 LazyVGrid(columns: columns) {
                     ForEach(category.indices, id: \.self) { item in
+
 
                       NavigationLink(isActive: $isCategory) {
                           SearchItemView(keyword: $keyword, selectedCategory: $selectedCategory)
@@ -156,18 +157,18 @@ struct HomeView: View {
                         
                     }
 
-                            
                     }
                 }
                 
                 //random recommended products
-                Text("RECOMMENDED RPODUCTS:")
+                Text("RECOMMENDED PRODUCTS:")
                     .foregroundColor(Color.blue)
                 
                 if case let .success(items) = itemResults {
                     let itemColumns = Array(repeating: GridItem(), count: 2)
                     LazyVGrid(columns: itemColumns) {
                         ForEach(items) { item in
+
                             
                            NavigationLink {
                                Text(item.id ?? "null")
@@ -179,27 +180,24 @@ struct HomeView: View {
                     }
 
                 } else if case let .failure(error) = itemResults {
+
                     // Handle error
                     let _ = print(error)
                     Text("Couldn't map data: \(error.localizedDescription)")
                    
                   }
 
-             
                 
                 Spacer()
                 
                 }
-            
             }
+        }
     }
-    }
-    
 
-    
+    }
+
 }
-
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
