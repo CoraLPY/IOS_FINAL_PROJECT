@@ -155,9 +155,8 @@ struct HomeView: View {
                         LazyVGrid(columns: itemColumns) {
                             ForEach(items) { item in
                                NavigationLink {
-                                   Text(item.id ?? "null")
+                                   ProductDetailView(item: item)
                                } label: {
-//                                   ProductBoxView(imageName: item.image, itemName: item.name, price: Int(item.price) ?? 0 , qty: Int(item.remainingStock) ?? 0)
                                    ProductBoxView(item: item)
                                }
                             }

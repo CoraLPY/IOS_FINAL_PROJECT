@@ -15,7 +15,7 @@ class ItemViewModel: ObservableObject {
     private var db = Firestore.firestore()
     
     init() {
-        db.collection("ITEMS").getDocuments { (snap, err) in
+        db.collection("ITEMS").getDocuments { [self] (snap, err) in
             if err != nil{
             print(err!)
                 print((err?.localizedDescription)!)
@@ -33,6 +33,15 @@ class ItemViewModel: ObservableObject {
                 let remainingStock = i.get("remainingStock") as! Int
 
                 self.items.append(Item(id: id, category: category, comments: comments, description: description, image: image, name: name, price: price, remainingStock: remainingStock))
+                
+//                do {
+//                    // add document
+//                    try db.collection("ITEMS").addDocument(from: Item(id: id, category: category, comments: comments, description: description, image: image, name: name, price: price, remainingStock: remainingStock))
+//                    // edit document
+//                    try db.collection("ITEMS").document(id).setData(from: Item(id: id, category: category, comments: comments, description: description, image: image, name: name, price: price, remainingStock: remainingStock))
+//                } catch {
+//                    print(error)
+//                }
             }
         }
     }
