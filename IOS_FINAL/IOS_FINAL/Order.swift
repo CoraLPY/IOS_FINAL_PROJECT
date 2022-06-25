@@ -4,8 +4,7 @@
 //
 //  Created by Alvin on 2022/6/25.
 //
-
-import Firebase
+import Foundation
 import FirebaseFirestoreSwift
 
 struct Order: Codable, Identifiable, Equatable {

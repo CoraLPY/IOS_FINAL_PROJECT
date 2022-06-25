@@ -46,11 +46,11 @@ struct HomeView: View {
                 .tabItem{
                   Label("Cart",systemImage: "cart.fill")
                 }
-           OrderView()
+           RecordView()
                 .tabItem{
                   Label("Order",systemImage: "list.bullet.rectangle.fill")
                 }
-           ProfileView()
+            ProfileView()
                 .tabItem{
                   Label("Profile",systemImage: "person.crop.circle.fill")
                 }

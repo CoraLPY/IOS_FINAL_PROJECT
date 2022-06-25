@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 extension Color {
     static let ui = Color.UI()
@@ -16,43 +18,58 @@ extension Color {
 }
 
 struct OrderBoxView: View {
-    let order: Order
+    let orderItem: OrderItem
+    let date: String
+    let status: String
     
     var body: some View {
-            HStack{
-                VStack{
-                    Text("\(order.id ?? "orderID")")
-                    Text("Date: \(order.date)")
-                    Text("Pickup: \(order.pickupMethod)")
-                    Text("Total:") + Text("$ \(order.cost)")
-                        .foregroundColor(Color.red).italic()
-                }
-                Spacer()
+
+        HStack {
+            Spacer()
+            
+            Image("notes1")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 75, height: 75, alignment: .leading)
+            
+            Spacer()
+            
+            VStack(alignment: .leading) {
+                Text(orderItem.id ?? "")
                 
-                Text("\(order.status)") .foregroundColor(Color.blue).italic().font(.title)
+                Text("Price: \(orderItem.cost)")
                 
-                
+                Text("Qty: \(orderItem.quantity)")
             }
-            .padding()
-            .cornerRadius(20)
-            .overlay(
-                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.ui.OrderBG, lineWidth: 2)
-                     )
-            .shadow(radius: 30)
-         
-        
+            
+            Spacer()
+            
+            VStack(alignment: .leading) {
+                Text(date)
+                
+                Text(status)
+            }
+            .padding(.bottom, 20)
+            
+            Spacer()
+        }
+        .frame(minWidth: 0, maxWidth: .infinity)
+        .padding(.vertical, 5)
     }
 }
 
 struct OrderBoxView_Previews: PreviewProvider {
+//    struct OrderBoxViewDemo: View {
+//        @FirestoreQuery(collectionPath: "ORDERS") var orders: [Order]
+//
+//        var body: some View {
+//            OrderBoxView(orderItem: orders[0].orderItems![0], date: orders[0].date, status: orders[0].status)
+//        }
+//    }
+
     static var previews: some View {
-        OrderBoxView(
-            order: Order(address: "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)", cost: 100, custId: "FWywzWzgx6VbwK9rh1IV7zgLhy13", date: "2021-01-05", orderItems:  [
-                OrderItem(cost: 10, quantity: 2),
-                OrderItem(cost: 10, quantity: 1)
-             ], paymentMethod: "VISA", pickupMethod: "shipping", status: "progress")
-        )
-        .previewLayout(.sizeThatFits)
+
+        OrderBoxView(orderItem: OrderItem(cost: 10, quantity: 1), date: "2021-01-05", status: "shipping")
+//        OrderBoxViewDemo()
     }
 }

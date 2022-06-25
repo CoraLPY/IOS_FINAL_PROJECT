@@ -6,43 +6,49 @@
 //
 
 import SwiftUI
+import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 
 
 struct OrderView: View {
-    let status = ["progress", "complete", "cancel"]
-    @State private var selectedStatus = "progress"
-    @ObservedObject var orderViewModel = OrderViewModel()
+
+    @State var orders = [Order]()
+    private var db = Firestore.firestore()
     
-    var body: some View {
-      
-        NavigationView{
-            ScrollView{
-                VStack{
-                    //status picker
-                    Picker(selection: $selectedStatus) {
-                        ForEach(status) { s in
-                            Text(s)
-                        }
-                    } label: {
-                        Text("select Category")
-                    }
-                    .pickerStyle(.segmented)
-             
-                    //show order
-              
-                        ForEach(orderViewModel.orders){ order in
-                            OrderBoxView(order: order)
-                        }
-                    
-             
-                    
-                }
+    init() {
+        db.collection("ORDERS").getDocuments { [self] (snap, err) in
+            if err != nil{
+                print(err!)
+                print((err?.localizedDescription)!)
+                return
+            }
+
+            for i in snap!.documents{
+                let id = i.documentID
+                let Address = i.get("Address") as! String
+                let cost = i.get("cost") as! Int
+                let custId = i.get("custId") as! String
+                let date = i.get("date") as! String
+                let orderItems = i.get("orderItems") as? [OrderItem] ?? []
+                let paymentMethod = i.get("paymentMethod") as! String
+                let pickupMethod = i.get("pickupMethod") as! String
+                let status = i.get("status") as! String
+                
+                self.orders.append(Order(id: id, address: Address, cost: cost, custId: custId, date: date, orderItems: orderItems, paymentMethod: paymentMethod, pickupMethod: pickupMethod, status: status))
             }
         }
-       
+    }
+    
+    var body: some View {
+        let _ = print("orders = \(orders)")
+        List {
+            ForEach(orders) { order in
+                let _ = print("order = \(order)")
+                OrderBoxView(orderItem: order.orderItems?[0] ?? [OrderItem]()[0], date: order.date, status: order.status)
+            }
+        }
     }
 }
 
