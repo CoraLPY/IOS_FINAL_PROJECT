@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct RegistrationView: View {
+    @EnvironmentObject  var viewRouter: ViewRouter
     @State private var name: String = ""
     @State private var email: String = ""
-    @State private var phoneNum: String = ""
     @State private var password: String = ""
     @State private var passwordConfirm: String = ""
+    @State var signUpProcessing = false
+    @State var isSuccess = false
     
     var body: some View {
         ZStack {
@@ -26,7 +30,7 @@ struct RegistrationView: View {
                     Text("Name")
                         .padding(.horizontal)
                     
-                    TextField("name", text: $email)
+                    TextField("name", text: $name)
                         .padding(.horizontal)
                     
                     Divider()
@@ -46,17 +50,7 @@ struct RegistrationView: View {
                 }
                 .padding(.horizontal)
                 
-                VStack(alignment: .leading) {
-                    Text("Phone Number")
-                        .padding(.horizontal)
-                    
-                    TextField("phone number", text: $phoneNum)
-                        .padding(.horizontal)
-                    
-                    Divider()
-                        .padding(.horizontal)
-                }
-                .padding(.horizontal)
+
                 
                 VStack(alignment: .leading) {
                     Text("Password")
@@ -81,20 +75,73 @@ struct RegistrationView: View {
                         .padding(.horizontal)
                 }
                 .padding(.horizontal)
+
                 
-                Button {
-                    
-                } label: {
-                    Text("Sign In")
-                }
-                .padding(.top)
+              /*  NavigationLink(isActive: $isSuccess) {
+                    HomeView()
+                } label: {*/
+                    Button {
+                        signUpUser(userEmail: email, userPassword: password)
+                            } label: {
+                                Text("Sign In")
+                            }
+                            .buttonStyle(.bordered)
+                            .buttonBorderShape(.capsule)
+                            .disabled(!signUpProcessing && !email.isEmpty && !password.isEmpty && !name.isEmpty && !passwordConfirm.isEmpty && password == passwordConfirm ? false : true)
+                            .padding(.top)
+               // }
+                
+              
+                
+                
             }
         }
     }
+    func signUpUser(userEmail: String, userPassword: String) {
+           
+           signUpProcessing = true
+        Auth.auth().createUser(withEmail: userEmail, password: userPassword){result, error in
+            
+            guard let user = result?.user,
+                  error == nil else {
+                signUpProcessing = false
+                print(error?.localizedDescription)
+                return
+            }
+            print(user.email, user.uid)
+        
+            
+            switch result {
+                case .none:
+                    print("Could not create account.")
+                    signUpProcessing = false
+                case .some(_):
+                    print("User created")
+                    signUpProcessing = false
+            
+                   // isSuccess = true
+                    
+                /////set name
+                    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = name
+                changeRequest?.commitChanges(completion: { error in
+                   guard error == nil else {
+                       print(error?.localizedDescription)
+                       return
+                   }
+                    self.viewRouter.currentView = "SignInView"
+                                    
+                })
+                }
+            
+            
+        }
+       }
+    
 }
 
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationView()
+        RegistrationView().environmentObject(ViewRouter())
     }
 }

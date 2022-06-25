@@ -10,13 +10,15 @@ import Firebase
 
 @main
 struct IOS_FINALApp: App {
+    @StateObject private var viewRouter = ViewRouter()
+    
     init() {
         FirebaseApp.configure()
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(viewRouter)
         }
     }
 }

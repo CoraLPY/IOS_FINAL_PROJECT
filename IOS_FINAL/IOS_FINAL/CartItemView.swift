@@ -7,7 +7,7 @@
 
 import SwiftUI
 import FirebaseFirestore
-
+import Firebase
 struct CartItemView: View {
     var cartItem: CartItem
     @State var qty: Int

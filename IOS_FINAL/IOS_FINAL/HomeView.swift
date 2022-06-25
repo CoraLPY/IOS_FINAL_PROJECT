@@ -12,6 +12,7 @@ import FirebaseFirestoreSwift
 import FirebaseAuth
 
 struct HomeView: View {
+    @EnvironmentObject  var viewRouter: ViewRouter
     @State var index = 0
     var bannerImages = ["promotion1", "promotion2", "promotion3"]
     let category = [
@@ -49,7 +50,7 @@ struct HomeView: View {
                 .tabItem{
                   Label("Order",systemImage: "list.bullet.rectangle.fill")
                 }
-            Text("Profile")
+           ProfileView()
                 .tabItem{
                   Label("Profile",systemImage: "person.crop.circle.fill")
                 }
@@ -175,6 +176,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView().environmentObject(ViewRouter())
     }
 }
