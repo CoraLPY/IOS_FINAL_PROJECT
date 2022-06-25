@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject  var viewRouter: ViewRouter
+    @EnvironmentObject var viewRouter: ViewRouter
     
     var body: some View {
         switch viewRouter.currentView {
-        case "SignInView":
-                SignInView()
         case "RegistrationView":
             RegistrationView()
         case "HomeView":
-                HomeView()
+            HomeView()
         default:
             SignInView()
         }

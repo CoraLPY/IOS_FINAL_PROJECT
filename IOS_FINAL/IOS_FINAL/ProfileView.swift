@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
-import FirebaseAuth
 import Firebase
+import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -28,14 +28,10 @@ struct ProfileView: View {
                        print(error)
                     }
                     viewRouter.currentView = "SignInView"
-                    
                 } label: {
                     Text("LogOut")
                 }
-
-                
-            }
-                        
+            }        
         }
     }
 }

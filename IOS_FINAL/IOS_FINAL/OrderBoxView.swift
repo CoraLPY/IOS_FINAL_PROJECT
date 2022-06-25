@@ -6,29 +6,60 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct OrderBoxView: View {
-    let order: Order
+    let orderItem: OrderItem
+    let date: String
+    let status: String
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Spacer()
+            
+            Image("notes1")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 75, height: 75, alignment: .leading)
+            
+            Spacer()
+            
+            VStack(alignment: .leading) {
+                Text(orderItem.id ?? "")
+                
+                Text("Price: \(orderItem.cost)")
+                
+                Text("Qty: \(orderItem.quantity)")
+            }
+            
+            Spacer()
+            
+            VStack(alignment: .leading) {
+                Text(date)
+                
+                Text(status)
+            }
+            .padding(.bottom, 20)
+            
+            Spacer()
+        }
+        .frame(minWidth: 0, maxWidth: .infinity)
+        .padding(.vertical, 5)
     }
 }
 
 struct OrderBoxView_Previews: PreviewProvider {
+//    struct OrderBoxViewDemo: View {
+//        @FirestoreQuery(collectionPath: "ORDERS") var orders: [Order]
+//
+//        var body: some View {
+//            OrderBoxView(orderItem: orders[0].orderItems![0], date: orders[0].date, status: orders[0].status)
+//        }
+//    }
+
     static var previews: some View {
-        OrderBoxView(
-            order: Order(address: "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)",
-             cost: 25,
-             custId: "FWywzWzgx6VbwK9rh1IV7zgLhy13",
-             date: "2021-01-05",
-             orderItems: [
-                OrderItem(cost: 10, quantity: 2),
-                OrderItem(cost: 10, quantity: 1)
-             ],
-             paymentMethod: "VISA",
-             pickupMethod: "shipping",
-             status: "progress")
-        )
+        OrderBoxView(orderItem: OrderItem(cost: 10, quantity: 1), date: "2021-01-05", status: "shipping")
+//        OrderBoxViewDemo()
     }
 }

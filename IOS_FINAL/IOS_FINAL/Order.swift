@@ -4,17 +4,17 @@
 //
 //  Created by Alvin on 2022/6/25.
 //
-
-import Firebase
+import Foundation
 import FirebaseFirestoreSwift
 
-class Order: Codable, Identifiable {
+struct Order: Codable, Identifiable, Equatable {
+    
     @DocumentID var id: String?
-    let address: String
+    let Address: String
     let cost: Int
     let custId: String
     let date: String
-    let orderItems: [OrderItem]
+    let orderItems: [OrderItem]?
     let paymentMethod: String
     let pickupMethod: String
     let status: String
