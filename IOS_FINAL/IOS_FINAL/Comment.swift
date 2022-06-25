@@ -16,8 +16,11 @@ struct  Comment: Codable, Identifiable, Equatable {
     let userName: String
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2a8ac255eddd35ab4080b46da7b3e35d46bd4d10
 /*
 extension Comment {
     static let demoComment=Comment(date: "2022-5-22", description: "Good", rate: "5", userName: "Mary")

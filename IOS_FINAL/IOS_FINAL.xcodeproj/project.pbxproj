@@ -145,7 +145,6 @@
 				AD54F0342855BAA10077FD0A /* Assets.xcassets */,
 				AD54F0302855BA9D0077FD0A /* IOS_FINALApp.swift */,
 				AD54F0362855BAA10077FD0A /* Preview Content */,
-<<<<<<< HEAD
 				AD7EE2862864E24C0087134B /* HomeView.swift */,
 				ADF9B0772864E9F100A2D930 /* PagingView.swift */,
 				ADF9B07928654F9F00A2D930 /* CategoryView.swift */,
@@ -154,8 +153,6 @@
 				ADF9B083286579BE00A2D930 /* Cart_Item.swift */,
 				AD3E92D42865A6B700A98E60 /* itemViewModel.swift */,
 				AD3E92D62865CCCB00A98E60 /* SearchItemView.swift */,
-=======
->>>>>>> 40045c2740bb895aaf124fd91c4651a5791e1c2b
 			);
 			path = IOS_FINAL;
 			sourceTree = "<group>";
@@ -366,7 +363,6 @@
 				E1BD67DC2865A45D00EA40E8 /* Item.swift in Sources */,
 				AD54F0332855BA9D0077FD0A /* ContentView.swift in Sources */,
 				AD54F0312855BA9D0077FD0A /* IOS_FINALApp.swift in Sources */,
-<<<<<<< HEAD
 				ADF9B0782864E9F100A2D930 /* PagingView.swift in Sources */,
 				AD3E92D72865CCCC00A98E60 /* SearchItemView.swift in Sources */,
 				ADF9B07E28656C7600A2D930 /* Comment.swift in Sources */,
@@ -374,13 +370,11 @@
 				E1BD67CE2864654A00EA40E8 /* RegistrationView.swift in Sources */,
 				AD3E92D52865A6B700A98E60 /* itemViewModel.swift in Sources */,
 				ADF9B07A28654F9F00A2D930 /* CategoryView.swift in Sources */,
-=======
 				E1BD67CE2864654A00EA40E8 /* RegistrationView.swift in Sources */,
 				E1BD67E22865D4EB00EA40E8 /* HomeView.swift in Sources */,
 				E1BD67E82865D56200EA40E8 /* CartView.swift in Sources */,
 				E1BD67DE2865A53300EA40E8 /* Comment.swift in Sources */,
 				E1BD67EA2865D56200EA40E8 /* CategoryView.swift in Sources */,
->>>>>>> 40045c2740bb895aaf124fd91c4651a5791e1c2b
 				E1BD67D02864681D00EA40E8 /* ProductBoxView.swift in Sources */,
 				E1BD67D4286595F900EA40E8 /* CommentView.swift in Sources */,
 				E1BD67EB2865D56200EA40E8 /* ContentView.swift in Sources */,
