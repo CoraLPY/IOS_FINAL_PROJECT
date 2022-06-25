@@ -23,7 +23,7 @@ struct SearchItemView: View {
     @Binding var keyword: String
     @State private var isEditing = false
     @State private var isSearch = false
-    @ObservedObject var data = itemViewModel()
+    @ObservedObject var data = ItemViewModel()
     //@State private var selectCategory = Category.ALL
     @Binding var selectedCategory: String
 
@@ -58,7 +58,8 @@ struct SearchItemView: View {
                            Text(item.id ?? "null")
                            
                       } label: {
-                          ProductBoxView(imageName: item.image, itemName: item.name, price: Int(item.price) ?? 0 , qty: Int(item.remainingStock) ?? 0)
+//                          ProductBoxView(imageName: item.image, itemName: item.name, price: Int(item.price) ?? 0 , qty: Int(item.remainingStock) ?? 0)
+                          ProductBoxView(item: item)
                       }
                         
                     }
