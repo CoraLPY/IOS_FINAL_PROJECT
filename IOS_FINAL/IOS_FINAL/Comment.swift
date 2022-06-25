@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestoreSwift
 
 struct Comment: Codable, Identifiable, Equatable {
-    var id: UUID = UUID()
+    @DocumentID var id: String?
     let date: String
     let description: String
     let rate: Int

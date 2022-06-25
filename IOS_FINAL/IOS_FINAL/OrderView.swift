@@ -9,11 +9,40 @@ import SwiftUI
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+
+
 struct OrderView: View {
-    @FirestoreQuery(collectionPath: "ORDERS") var orders: [Order]
+    let status = ["progress", "complete", "cancel"]
+    @State private var selectedStatus = "progress"
+    @ObservedObject var orderViewModel = OrderViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      
+        NavigationView{
+            ScrollView{
+                VStack{
+                    //status picker
+                    Picker(selection: $selectedStatus) {
+                        ForEach(status) { s in
+                            Text(s)
+                        }
+                    } label: {
+                        Text("select Category")
+                    }
+                    .pickerStyle(.segmented)
+             
+                    //show order
+              
+                        ForEach(orderViewModel.orders){ order in
+                            OrderBoxView(order: order)
+                        }
+                    
+             
+                    
+                }
+            }
+        }
+       
     }
 }
 

@@ -8,14 +8,20 @@
 import Firebase
 import FirebaseFirestoreSwift
 
-class Order: Codable, Identifiable {
+struct Order: Codable, Identifiable, Equatable {
     @DocumentID var id: String?
+    //var id: String = UUID().uuidString
     let address: String
     let cost: Int
     let custId: String
     let date: String
-    let orderItems: [OrderItem]
+    let orderItems: [OrderItem]?
     let paymentMethod: String
     let pickupMethod: String
     let status: String
 }
+
+/*let order = Order(address: "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)", cost: 100, custId: "FWywzWzgx6VbwK9rh1IV7zgLhy13", date: "2021-01-05", orderItems:  [
+    OrderItem(cost: 10, quantity: 2),
+    OrderItem(cost: 10, quantity: 1)
+ ], paymentMethod: "VISA", pickupMethod: "shipping", status: "progress")*/

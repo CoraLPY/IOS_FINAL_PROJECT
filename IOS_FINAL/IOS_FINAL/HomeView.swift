@@ -46,7 +46,7 @@ struct HomeView: View {
                 .tabItem{
                   Label("Cart",systemImage: "cart.fill")
                 }
-            Text("Order")
+           OrderView()
                 .tabItem{
                   Label("Order",systemImage: "list.bullet.rectangle.fill")
                 }

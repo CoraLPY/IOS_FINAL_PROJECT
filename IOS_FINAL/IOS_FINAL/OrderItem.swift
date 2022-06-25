@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestoreSwift
 
-class OrderItem: Codable, Identifiable {
-    var id: UUID = UUID()
+struct OrderItem: Codable, Identifiable, Equatable {
+    @DocumentID var id: String?
     let cost: Int
     let quantity: Int
 }
