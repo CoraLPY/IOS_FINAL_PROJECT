@@ -6,21 +6,22 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct CartView: View {
-    @FirestoreQuery(collectionPath: "CART_ITEMS") var cartItems: [CartItem]
+    @ObservedObject var cartViewModel = CartViewModel()
     
-    @State var totalItems: Int
-    @State var totalPrice: Int
+    private let db = Firestore.firestore()
+    
     @State private var paymentMethod: Int = 0
     @State private var pickupMethod: Int = 0
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack {
-                Text("Total: \(totalItems) item(s)")
+                Text("Total: \(cartViewModel.totalItems) item(s)")
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 5)
                 
@@ -28,7 +29,7 @@ struct CartView: View {
                     Spacer()
                     
                     VStack(alignment: .leading) {
-                        ForEach(cartItems) { cartItem in
+                        ForEach(cartViewModel.cartItems) { cartItem in
                             CartItemView(cartItem: cartItem, qty: cartItem.quantity)
                         }
 //                        for i in 0..<cartItems.count {
@@ -43,32 +44,55 @@ struct CartView: View {
                     Spacer()
                 }
                 
-                Text("Total Price: $\(totalPrice)")
+                Text("Total Price: $\(cartViewModel.totalPrice)")
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                     .padding(5)
                 
                 HStack {
-                    Text("Please select payment method: ")
+                    Text("payment method: ")
                     
                     Picker("Payment method", selection: $paymentMethod) {
                         Text("Master").tag(0)
                         Text("VISA").tag(1)
                     }
+                    .pickerStyle(.segmented)
                 }
-                .padding(.vertical, 10)
+                .padding(10)
                 
                 HStack {
-                    Text("Please select pick-up method: ")
+                    Text("pick-up method: ")
                     
                     Picker("pick-up method", selection: $pickupMethod) {
                         Text("In-store pickup").tag(0)
                         Text("Shipping").tag(1)
                     }
+                    .pickerStyle(.segmented)
                 }
-                .padding(.vertical, 10)
+                .padding(10)
                 
                 Button {
-                    // check out
+                    if let user = Auth.auth().currentUser {
+                        let addr = "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)"
+//                        let date = Date.now.formatted(date: ., time: .omitted)
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-dd"
+                        let date = dateFormatter.string(from: Date.now)
+                        let payment = paymentMethod == 0 ? "Master" : "VISA"
+                        let pickup = pickupMethod == 0 ? "in-store pickup" : "Shipping"
+                        
+                        let order = Order(address: addr, cost: cartViewModel.totalPrice, custId: user.uid, date: date, orderItems: cartViewModel.getOrderItems(), paymentMethod: payment, pickupMethod: pickup, status: "progress")
+                        
+                        do {
+                            let docID = try db.collection("ORDERS").addDocument(from: order)
+                            print(docID)
+                            
+                            for cartItem in cartViewModel.cartItems {
+                                db.collection("CART_ITEMS").document(cartItem.id ?? "").delete()
+                            }
+                        } catch {
+                            print(error)
+                        }
+                    }
                 } label: {
                     Text("Check Out")
                 }
@@ -85,16 +109,7 @@ struct CartView: View {
 }
 
 struct CartView_Previews: PreviewProvider {
-    struct CartViewDemo: View {
-        @State var totalItems: Int = 0
-        @State var totalPrice: Int = 0
-        
-        var body: some View {
-            CartView(totalItems: totalItems, totalPrice: totalPrice)
-        }
-    }
-    
     static var previews: some View {
-        CartViewDemo()
+        CartView()
     }
 }

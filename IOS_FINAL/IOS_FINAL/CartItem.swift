@@ -14,8 +14,4 @@ struct CartItem: Codable, Identifiable, Equatable {
     let itemID: String
     let price: Int
     let quantity: Int
-    
-    func getTotalPrice() -> Int {
-        return price * quantity
-    }
 }

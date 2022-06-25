@@ -42,6 +42,7 @@ struct RecordView: View {
                             }
                            
                         }
+
                 }
             }
         }

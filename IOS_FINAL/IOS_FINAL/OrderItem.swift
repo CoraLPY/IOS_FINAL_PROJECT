@@ -14,4 +14,5 @@ struct OrderItem: Codable, Identifiable, Equatable {
     var itemId: String
     var cost: Int
     var quantity: Int
+
 }

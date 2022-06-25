@@ -16,7 +16,7 @@ struct ProfileView: View {
     
     var body: some View {
         if let user = Auth.auth().currentUser {
-            VStack{
+            VStack {
                 let name = user.displayName ?? "nil"
                 
                 Text("Hi, \(name)")

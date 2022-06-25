@@ -9,19 +9,19 @@ import Firebase
 import FirebaseFirestore
 
 class OrderViewModel: ObservableObject {
+
     @Published var orders :[Order] = []
    // @Published var orderitems :[OrderItem] = []
+
     private var db = Firestore.firestore()
     
-    init(){
+    init() {
        listenChange()
     }
     
-    
-    
+
     func modifyOrder(order: Order) {
         do {
- 
           //  try db.collection("ORDERS").document(order.id ?? "").setData(order)
         } catch  {
             print(error)
@@ -33,14 +33,16 @@ class OrderViewModel: ObservableObject {
         db.collection("ORDERS").whereField("custId", isEqualTo: Auth.auth().currentUser!.uid).addSnapshotListener { querySnapshot, error in
             if error != nil{
             print(error!)
+
                 return
             }
-           guard let documents = querySnapshot?.documents else {
+            guard let documents = querySnapshot?.documents else {
                 print("No documents")
                 return
             }
             
             self.orders = documents.map{ queryDocumentSnapshot -> Order in
+
                 
                 let data = queryDocumentSnapshot.data()
                 let id = queryDocumentSnapshot.documentID
@@ -50,8 +52,7 @@ class OrderViewModel: ObservableObject {
                 let custId = data["custId"] as? String ?? ""
                 let paymentMethod = data["paymentMethod"] as? String ?? ""
                 let pickupMethod = data["pickupMethod"] as? String ?? ""
-                let status = data["status"] as? String ?? ""
-                
+                let status = data["status"] as? String ?? ""   
                 let orderItems = data["orderItems"] as? NSArray
                 var curr_orderitems :[OrderItem] = []
                 for orderitem in orderItems as! [Dictionary<String, AnyObject>] {
@@ -71,14 +72,10 @@ class OrderViewModel: ObservableObject {
                                           }
                 
                 return Order(id: id, address: address, cost: cost, custId: custId, date: date, orderItems: curr_orderitems, paymentMethod: paymentMethod, pickupMethod: pickupMethod, status: status)
-            
+        
             }
-                
-            }
-         
         }
  
                 
     }
-    
-    
+}
