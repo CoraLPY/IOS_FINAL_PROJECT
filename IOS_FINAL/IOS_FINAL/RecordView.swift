@@ -12,6 +12,7 @@ struct RecordView: View {
     @State private var selectedStatus = "progress"
     @ObservedObject var orderViewModel = OrderViewModel()
     
+    
     var body: some View {
       
         NavigationView{
@@ -23,14 +24,23 @@ struct RecordView: View {
                             Text(s)
                         }
                     } label: {
-                        Text("select Category")
+                        Text("select status")
                     }
                     .pickerStyle(.segmented)
              
                     //show order
-              
-                        ForEach(orderViewModel.orders){ order in
-                            RecordRow(order: order)
+                    ForEach(orderViewModel.orders.filter{$0.status.localizedStandardContains(self.selectedStatus)}){ order in
+                            NavigationLink {
+                                
+                                RecordDetail(record: order)
+                                
+                                
+                            } label: {
+                               //let _ = print(order.orderItems!.count)
+                                RecordRow(order: order)
+                                
+                            }
+                           
                         }
                 }
             }

@@ -12,8 +12,8 @@ struct RecordRow: View {
     
     var body: some View {
         HStack{
-            VStack{
-                Text("\(order.id ?? "orderID")")
+            VStack(alignment:.leading){
+                Text("ID: \(order.id ?? "orderID")")
                 Text("Date: \(order.date)")
                 Text("Pickup: \(order.pickupMethod)")
                 Text("Total:") + Text("$ \(order.cost)")
@@ -39,8 +39,8 @@ struct RecordRow_Previews: PreviewProvider {
     static var previews: some View {
         RecordRow(
             order: Order(address: "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)", cost: 100, custId: "FWywzWzgx6VbwK9rh1IV7zgLhy13", date: "2021-01-05", orderItems:  [
-                OrderItem(cost: 10, quantity: 2),
-                OrderItem(cost: 10, quantity: 1)
+                OrderItem(itemId:"A80tkdoxWpZNS6FdSW6U",cost: 10, quantity: 2),
+                OrderItem(itemId:"A80tkdoxWpZNS6FdSW6U",cost: 10, quantity: 1)
              ], paymentMethod: "VISA", pickupMethod: "shipping", status: "progress")
         )
         .previewLayout(.sizeThatFits)

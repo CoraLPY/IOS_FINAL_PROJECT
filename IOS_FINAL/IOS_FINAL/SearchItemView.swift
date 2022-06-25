@@ -22,7 +22,6 @@ struct SearchItemView: View {
     @State private var isEditing = false
     @State private var isSearch = false
     @ObservedObject var data = ItemViewModel()
-    //@State private var selectCategory = Category.ALL
     @Binding var selectedCategory: String
 
     var body: some View {
