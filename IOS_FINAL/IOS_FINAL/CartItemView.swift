@@ -6,19 +6,16 @@
 //
 
 import SwiftUI
-import FirebaseFirestore
 import Firebase
+import FirebaseFirestore
+
 struct CartItemView: View {
     var cartItem: CartItem
-    @State var qty: Int
     
     private let store = Firestore.firestore()
     private let imageName: String = "notes1"
     
-//    init(cartItem: CartItem, qty: Int, totalItems: Int, totalPrice: Int) {
-//        self.cartItem = cartItem
-//        self.qty = self.cartItem.quantity
-//    }
+    @State var qty: Int
     
     var body: some View {
         HStack {
@@ -53,7 +50,7 @@ struct CartItemView: View {
                         do {
                             try store.collection("CART_ITEMS").document(cartItem.id ?? "").setData(from: CartItem(custID: cartItem.custID, itemID: cartItem.itemID, price: cartItem.price, quantity: qty))
                         } catch {
-                            
+                            print(error)
                         }
                     } label: {
                         Text("Update")
@@ -67,7 +64,7 @@ struct CartItemView: View {
                     }
                     
                     Button {
-                        // delete this item
+                        store.collection("CART_ITEMS").document(cartItem.id ?? "").delete()
                     } label: {
                         Text("Delete")
                             .foregroundColor(.black)

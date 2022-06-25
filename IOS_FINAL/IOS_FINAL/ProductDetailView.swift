@@ -36,7 +36,6 @@ struct ProductDetailView: View {
                     Button {
                         
                     } label: {
-                        // change this to cart icon
                         Image(item.image)
                             .resizable()
                             .scaledToFit()

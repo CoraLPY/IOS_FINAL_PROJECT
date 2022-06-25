@@ -13,7 +13,6 @@ import FirebaseFirestoreSwift
 
 
 struct OrderView: View {
-
     @State var orders = [Order]()
     private var db = Firestore.firestore()
     

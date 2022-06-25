@@ -42,11 +42,11 @@ struct HomeView: View {
                 .tabItem{
                   Label("Home",systemImage: "house.fill")
                 }
-            CartView(totalItems: 0, totalPrice: 0)
+            CartView()
                 .tabItem{
                   Label("Cart",systemImage: "cart.fill")
                 }
-           RecordView()
+            RecordView()
                 .tabItem{
                   Label("Order",systemImage: "list.bullet.rectangle.fill")
                 }

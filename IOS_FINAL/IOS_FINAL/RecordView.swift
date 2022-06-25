@@ -29,9 +29,9 @@ struct RecordView: View {
              
                     //show order
               
-                        ForEach(orderViewModel.orders){ order in
-                            RecordRow(order: order)
-                        }
+                    ForEach(orderViewModel.orders) { order in
+                        RecordRow(order: order)
+                    }
                 }
             }
         }

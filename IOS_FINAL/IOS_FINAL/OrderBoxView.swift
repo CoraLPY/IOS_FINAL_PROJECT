@@ -23,7 +23,6 @@ struct OrderBoxView: View {
     let status: String
     
     var body: some View {
-
         HStack {
             Spacer()
             
@@ -35,7 +34,7 @@ struct OrderBoxView: View {
             Spacer()
             
             VStack(alignment: .leading) {
-                Text(orderItem.id ?? "")
+                Text(orderItem.itemId)
                 
                 Text("Price: \(orderItem.cost)")
                 
@@ -69,7 +68,7 @@ struct OrderBoxView_Previews: PreviewProvider {
 
     static var previews: some View {
 
-        OrderBoxView(orderItem: OrderItem(cost: 10, quantity: 1), date: "2021-01-05", status: "shipping")
+        OrderBoxView(orderItem: OrderItem(cost: 10, itemId: "itemId", quantity: 1), date: "2021-01-05", status: "shipping")
 //        OrderBoxViewDemo()
     }
 }

@@ -9,17 +9,16 @@ import Firebase
 import FirebaseFirestore
 
 class OrderViewModel: ObservableObject {
-    @Published var orders :[Order] = []
+    @Published var orders: [Order] = []
+    
     private var db = Firestore.firestore()
     
-    init(){
+    init() {
        listenChange()
     }
     
-    
     func modifyOrder(order: Order) {
         do {
- 
           //  try db.collection("ORDERS").document(order.id ?? "").setData(order)
         } catch  {
             print(error)
@@ -30,16 +29,16 @@ class OrderViewModel: ObservableObject {
         //.whereField("custId", isEqualTo: Auth.auth().currentUser!.uid)
         //print(Auth.auth().currentUser!.uid)
         db.collection("ORDERS").addSnapshotListener { querySnapshot, error in
-            if error != nil{
-            print(error!)
+            if error != nil {
+                print(error!)
                 return
             }
-           guard let documents = querySnapshot?.documents else {
+            guard let documents = querySnapshot?.documents else {
                 print("No documents")
                 return
             }
             
-            self.orders = documents.map{ queryDocumentSnapshot -> Order in
+            self.orders = documents.map { queryDocumentSnapshot -> Order in
                 let data = queryDocumentSnapshot.data()
                 
                 let address = data["Address"] as? String ?? ""
@@ -52,12 +51,7 @@ class OrderViewModel: ObservableObject {
                 let orderItems = data["orderItems"] as? [OrderItem] ?? []
                 //print(queryDocumentSnapshot.documentID)
                 return Order(id: queryDocumentSnapshot.documentID, address: address, cost: cost, custId: custId, date: date, orderItems: orderItems, paymentMethod: paymentMethod, pickupMethod: pickupMethod, status: status)
-            
             }
-                
-            }
-         
         }
     }
-    
-    
+}
