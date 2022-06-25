@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct  Comment: Codable, Identifiable, Equatable {
+struct Comment: Codable, Identifiable, Equatable {
     var id: UUID = UUID()
     let date: String
     let description: String

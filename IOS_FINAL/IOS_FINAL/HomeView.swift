@@ -37,11 +37,11 @@ struct HomeView: View {
     
     var body: some View {
         TabView{
-                homePage
+            homePage
                 .tabItem{
                   Label("Home",systemImage: "house.fill")
                 }
-            Text("Cart")
+            CartView(totalItems: 0, totalPrice: 0)
                 .tabItem{
                   Label("Cart",systemImage: "cart.fill")
                 }
