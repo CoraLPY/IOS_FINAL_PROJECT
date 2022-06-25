@@ -29,8 +29,8 @@ class ItemViewModel: ObservableObject {
                 let description = i.get("description") as! String
                 let image = i.get("image") as! String
                 let name = i.get("name") as! String
-                let price = Int(i.get("price") as! String)!
-                let remainingStock = Int(i.get("remainingStock") as! String)!
+                let price = i.get("price") as! Int
+                let remainingStock = i.get("remainingStock") as! Int
 
                 self.items.append(Item(id: id, category: category, comments: comments, description: description, image: image, name: name, price: price, remainingStock: remainingStock))
             }
