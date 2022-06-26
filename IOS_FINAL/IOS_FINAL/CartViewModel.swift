@@ -39,9 +39,9 @@ class CartViewModel: ObservableObject {
                     orderItems.append(OrderItem(itemId: id, cost: cartItem.price, quantity: cartItem.quantity))
                     print(orderItems)
                 }
-                ////////////////////////////////
-                ///// DONT TOUCH//
-                ////////////////////////////////
+                /////////////////////////////////
+                ///// DONT TOUCH //
+                /////////////////////////////////
                 // voodoo programming
                 completionHandler(orderItems)
                 // what even are you?
@@ -63,9 +63,8 @@ class CartViewModel: ObservableObject {
             }
             
             let filterdDocuments = documents.filter { doc in
-                var user = Auth.auth().currentUser
-                var uid = user?.uid ?? "nil"
-                
+                let user = Auth.auth().currentUser
+                let uid = user?.uid ?? "nil"
                 return doc.data()["custID"] as! String == uid
             }
             

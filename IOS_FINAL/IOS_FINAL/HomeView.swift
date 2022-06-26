@@ -24,9 +24,8 @@ struct HomeView: View {
    ]
     
     @FirestoreQuery(collectionPath: "ITEMS", predicates: [.order(by: "name", descending: true),.limitTo(6)])
-    fileprivate var itemResults:Result<[Item], Error>
+    fileprivate var itemResults: Result<[Item], Error>
     
-
     @State private var keyword: String = ""
     @State private var selectedCategory: String = "ALL"
     
@@ -35,24 +34,23 @@ struct HomeView: View {
     @State var isSearch = false
     @State var isCategory = false
 
-    
     var body: some View {
         TabView{
             homePage
                 .tabItem{
-                  Label("Home",systemImage: "house.fill")
+                  Label("Home", systemImage: "house.fill")
                 }
             CartView()
                 .tabItem{
-                  Label("Cart",systemImage: "cart.fill")
+                  Label("Cart", systemImage: "cart.fill")
                 }
             RecordView()
                 .tabItem{
-                  Label("Order",systemImage: "list.bullet.rectangle.fill")
+                  Label("Order", systemImage: "list.bullet.rectangle.fill")
                 }
             ProfileView()
                 .tabItem{
-                  Label("Profile",systemImage: "person.crop.circle.fill")
+                  Label("Profile", systemImage: "person.crop.circle.fill")
                 }
         }
     }
@@ -174,7 +172,6 @@ struct HomeView: View {
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .navigationBarTitleDisplayMode(.inline)
-
     }
 }
 

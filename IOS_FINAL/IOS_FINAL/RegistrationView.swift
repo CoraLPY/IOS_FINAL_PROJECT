@@ -102,13 +102,12 @@ struct RegistrationView: View {
            signUpProcessing = true
         Auth.auth().createUser(withEmail: userEmail, password: userPassword){result, error in
             
-            guard let user = result?.user,
-                  error == nil else {
+            guard let user = result?.user, error == nil else {
                 signUpProcessing = false
-                print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
                 return
             }
-            print(user.email, user.uid)
+            print(user.email as Any, user.uid)
         
             
             switch result {
@@ -126,7 +125,7 @@ struct RegistrationView: View {
                 changeRequest?.displayName = name
                 changeRequest?.commitChanges(completion: { error in
                    guard error == nil else {
-                       print(error?.localizedDescription)
+                       print(error?.localizedDescription as Any)
                        return
                    }
                     self.viewRouter.currentView = "SignInView"

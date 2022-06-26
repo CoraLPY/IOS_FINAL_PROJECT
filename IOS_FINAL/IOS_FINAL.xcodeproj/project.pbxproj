@@ -85,7 +85,6 @@
 		ADC5FA232866DBED006C2E30 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		ADC5FA252866DFFD006C2E30 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		ADC5FA2A2866FDB4006C2E30 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
-		ADEE62042866CE7200B9A8B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E1BD67CD2864654A00EA40E8 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		E1BD67CF2864681D00EA40E8 /* ProductBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBoxView.swift; sourceTree = "<group>"; };
 		E1BD67D12864B4BE00EA40E8 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
@@ -202,7 +201,6 @@
 		E1BD67DF2865AB9000EA40E8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				ADEE62042866CE7200B9A8B2 /* GoogleService-Info.plist */,
 				E1BD67EE2865EAC400EA40E8 /* CartItemView.swift */,
 				AD3E92D62865CCCB00A98E60 /* SearchItemView.swift */,
 				E1BD67E32865D56200EA40E8 /* CartView.swift */,
