@@ -45,7 +45,7 @@ struct RecordView: View {
 
                 }
             }
-        }
+        }.navigationTitle("Order")
 }
 }
 

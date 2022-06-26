@@ -22,7 +22,9 @@ class OrderViewModel: ObservableObject {
 
     func modifyOrder(order: Order) {
         do {
-          //  try db.collection("ORDERS").document(order.id ?? "").setData(order)
+       
+    
+            try db.collection("ORDERS").document(order.id ?? "").setData(["status":"cancel"],merge: true)
         } catch  {
             print(error)
         }

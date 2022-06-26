@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct RecordDetail: View {
-   let record: Order
+   var record: Order
     @ObservedObject var  itemModel = ItemViewModel()
+    @ObservedObject var  orderModel = OrderViewModel()
     @State  var isProgess = false
     @State private var showAlert = false
     
@@ -97,7 +98,9 @@ struct RecordDetail: View {
                     
                         .alert("Warning", isPresented: $showAlert, actions: {
                            Button("OK") {
-                               print("cancel")
+                               var modifyOrder = record
+                               modifyOrder.status = "cancel"
+                               orderModel.modifyOrder(order: modifyOrder)
                            }
                            Button("Cancel", role: .cancel) {
                            }
@@ -107,9 +110,10 @@ struct RecordDetail: View {
                         })
 
             }
-        }.navigationTitle("Record Detail")
+        }.navigationTitle("Order Details")
             .onAppear(){
                 isProgess = record.status == "progress" ? true : false
+                
             }
     }
     
