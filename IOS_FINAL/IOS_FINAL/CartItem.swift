@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 struct CartItem: Codable, Identifiable, Equatable {
     @DocumentID var id: String?
     let custID: String
+    let image: String
     let itemID: String
     let price: Int
     let quantity: Int

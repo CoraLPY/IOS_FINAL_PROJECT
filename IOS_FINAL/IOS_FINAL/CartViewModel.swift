@@ -19,12 +19,36 @@ class CartViewModel: ObservableObject {
        listenChange()
     }
     
-    func getOrderItems() -> [OrderItem] {
+    func getOrderItems(completionHandler:@escaping([OrderItem])->()) {
         var orderItems = [OrderItem]()
         for cartItem in cartItems {
-            orderItems.append(OrderItem(cost: cartItem.price, itemId: cartItem.itemID, quantity: cartItem.quantity))
+            var id: String = ""
+            db.collection("ITEMS").whereField("name", isEqualTo: cartItem.itemID).getDocuments { querySnapshot, err in
+                if let err = err {
+                    print(err)
+                }
+                guard let docs = querySnapshot?.documents else { return }
+                for doc in docs {
+                    let name = doc.get("name") as! String
+                    if name != cartItem.itemID {
+                        continue
+                    }
+                    print("name=\(name)")
+                    id = doc.documentID
+                    print("inside id=\(id)")
+                    orderItems.append(OrderItem(cost: cartItem.price, itemId: id, quantity: cartItem.quantity))
+                    print(orderItems)
+                }
+                ////////////////////////////////
+                ///// DONT TOUCH//
+                ////////////////////////////////
+                // voodoo programming
+                completionHandler(orderItems)
+                // what even are you?
+            }
         }
-        return orderItems
+        // or this will work someday?
+        //completionHandler(orderItems)
     }
     
     func listenChange() {
@@ -49,6 +73,7 @@ class CartViewModel: ObservableObject {
                 let data = queryDocumentSnapshot.data()
                 
                 let custID = data["custID"] as? String ?? ""
+                let image = data["image"] as? String ?? ""
                 let itemID = data["itemID"] as? String ?? ""
                 let price = data["price"] as? Int ?? 0
                 let quantity = data["quantity"] as? Int ?? 0
@@ -56,7 +81,7 @@ class CartViewModel: ObservableObject {
                 self.totalPrice += price * quantity
                 self.totalItems += quantity
                 
-                return CartItem(id: queryDocumentSnapshot.documentID, custID: custID, itemID: itemID, price: price, quantity: quantity)
+                return CartItem(id: queryDocumentSnapshot.documentID, custID: custID, image: image, itemID: itemID, price: price, quantity: quantity)
             }
         }
     }

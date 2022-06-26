@@ -32,10 +32,6 @@ struct CartView: View {
                         ForEach(cartViewModel.cartItems) { cartItem in
                             CartItemView(cartItem: cartItem, qty: cartItem.quantity)
                         }
-//                        for i in 0..<cartItems.count {
-//                            totalItems += cartItems[i].quantity
-//                            totalPrice += cartItems[i].getTotalPrice()
-//                        }
                     }
                     .padding(.horizontal, 5)
                     .padding(.bottom, 10)
@@ -80,18 +76,38 @@ struct CartView: View {
                         let payment = paymentMethod == 0 ? "Master" : "VISA"
                         let pickup = pickupMethod == 0 ? "in-store pickup" : "Shipping"
                         
-                        let order = Order(address: addr, cost: cartViewModel.totalPrice, custId: user.uid, date: date, orderItems: cartViewModel.getOrderItems(), paymentMethod: payment, pickupMethod: pickup, status: "progress")
+//                        let order = Order(address: addr, cost: cartViewModel.totalPrice, custId: user.uid, date: date, orderItems: cartViewModel.getOrderItems(), paymentMethod: payment, pickupMethod: pickup, status: "progress")
                         
-                        do {
-                            let docID = try db.collection("ORDERS").addDocument(from: order)
-                            print(docID)
+                        
+                        cartViewModel.getOrderItems { orderItems in
                             
-                            for cartItem in cartViewModel.cartItems {
-                                db.collection("CART_ITEMS").document(cartItem.id ?? "").delete()
+                            print("outside items:\(orderItems)")
+                            let order = Order(address: addr, cost: cartViewModel.totalPrice, custId: user.uid, date: date, orderItems: orderItems, paymentMethod: payment, pickupMethod: pickup, status: "progress")
+                            
+                            
+                            
+                            do {
+                                let docID = try db.collection("ORDERS").addDocument(from: order)
+                                print(docID)
+                                
+                                for cartItem in cartViewModel.cartItems {
+                                    db.collection("CART_ITEMS").document(cartItem.id ?? "").delete()
+                                }
+                            } catch {
+                                print(error)
                             }
-                        } catch {
-                            print(error)
                         }
+                        
+//                        do {
+//                            let docID = try db.collection("ORDERS").addDocument(from: order)
+//                            print(docID)
+//
+//                            for cartItem in cartViewModel.cartItems {
+//                                db.collection("CART_ITEMS").document(cartItem.id ?? "").delete()
+//                            }
+//                        } catch {
+//                            print(error)
+//                        }
                     }
                 } label: {
                     Text("Check Out")

@@ -13,14 +13,14 @@ struct CartItemView: View {
     var cartItem: CartItem
     
     private let store = Firestore.firestore()
-    private let imageName: String = "notes1"
+    private let imageName: String = ""
     
     @State var qty: Int
     
     var body: some View {
         HStack {
             VStack {
-                Image(imageName)
+                Image(cartItem.image)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 75, height: 75)
@@ -48,7 +48,24 @@ struct CartItemView: View {
                 HStack {
                     Button {
                         do {
-                            try store.collection("CART_ITEMS").document(cartItem.id ?? "").setData(from: CartItem(custID: cartItem.custID, itemID: cartItem.itemID, price: cartItem.price, quantity: qty))
+                            try store.collection("CART_ITEMS").document(cartItem.id ?? "").setData(from: CartItem(custID: cartItem.custID, image: cartItem.image, itemID: cartItem.itemID, price: cartItem.price, quantity: qty))
+                            // return delta qty back to item
+                            store.collection("ITEMS").whereField("name", isEqualTo: cartItem.itemID).getDocuments { querySnapshot, err in
+                                if let err = err {
+                                    print(err)
+                                }
+                                guard let docs = querySnapshot?.documents else { return }
+                                for doc in docs {
+                                    let name = doc.get("name") as! String
+                                    if name != cartItem.itemID {
+                                        continue
+                                    }
+                                    let remainingStock = doc.get("remainingStock") as! Int
+                                    let ref = doc.reference
+                                    ref.updateData(["remainingStock": remainingStock + (cartItem.quantity - qty)])
+                                    break
+                                }
+                            }
                         } catch {
                             print(error)
                         }
@@ -65,6 +82,23 @@ struct CartItemView: View {
                     
                     Button {
                         store.collection("CART_ITEMS").document(cartItem.id ?? "").delete()
+                        // return delta qty back to item
+                        store.collection("ITEMS").whereField("name", isEqualTo: cartItem.itemID).getDocuments { querySnapshot, err in
+                            if let err = err {
+                                print(err)
+                            }
+                            guard let docs = querySnapshot?.documents else { return }
+                            for doc in docs {
+                                let name = doc.get("name") as! String
+                                if name != cartItem.itemID {
+                                    continue
+                                }
+                                let remainingStock = doc.get("remainingStock") as! Int
+                                let ref = doc.reference
+                                ref.updateData(["remainingStock": remainingStock + cartItem.quantity])
+                                break
+                            }
+                        }
                     } label: {
                         Text("Delete")
                             .foregroundColor(.black)
@@ -87,7 +121,7 @@ struct CartItemView_Previews: PreviewProvider {
         @State var totalPrice: Int = 0
         
         var body: some View {
-            CartItemView(cartItem: CartItem(custID: "tI9qKKyj2vU24Twws6zgaYIvPTx1", itemID: "item4", price: 7, quantity: 10), qty: 10)
+            CartItemView(cartItem: CartItem(custID: "tI9qKKyj2vU24Twws6zgaYIvPTx1", image: "notes1", itemID: "Post-it 654 Yellow Notes 3 inch x 3 inch", price: 7, quantity: 10), qty: 10)
         }
     }
     

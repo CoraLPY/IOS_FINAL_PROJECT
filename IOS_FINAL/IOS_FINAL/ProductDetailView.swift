@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct ProductDetailView: View {
     let item: Item
     
+    private let db = Firestore.firestore()
     @State private var purchaseAmount: Int = 1
     
     var body: some View {
@@ -34,7 +36,16 @@ struct ProductDetailView: View {
                     }
                     
                     Button {
-                        
+                        if purchaseAmount > 0 && purchaseAmount <= item.remainingStock {
+                            do {
+                                let cartItem = CartItem(custID: Auth.auth().currentUser!.uid, image: item.image, itemID: item.name, price: item.price, quantity: purchaseAmount)
+                                let docID = try db.collection("CART_ITEMS").addDocument(from: cartItem)
+                                print(docID)
+                                try db.collection("ITEMS").document(item.id ?? "").setData(from: Item(category: item.category, comments: item.comments, description: item.description, image: item.image, name: item.name, price: item.price, remainingStock: item.remainingStock - purchaseAmount))
+                            } catch {
+                                print(error)
+                            }
+                        }
                     } label: {
                         Image(item.image)
                             .resizable()
@@ -89,11 +100,11 @@ struct ProductDetailView: View {
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView(item: Item(category: "NOTES", comments: [
+        ProductDetailView(item: Item(id: "z0ak2LDumWLrCxmBExtS", category: "NOTES", comments: [
             Comment(date: "2022-02-29", description: "A little bit update", rate: 1, userName: "Mary"),
             Comment(date: "2022-02-29", description: "", rate: 5, userName: "Mary"),
             Comment(date: "2022-02-29", description: "Good", rate: 5, userName: "Mary"),
             Comment(date: "2022-02-29", description: "Wonderful", rate: 5, userName: "Mary")
-        ], description: "Prof sticky notes", image: "notes1", name: "Yellow Sticky notes", price: 10, remainingStock: 30))
+        ], description: "Classic design,Perfect for messages,Greener choice", image: "notes1", name: "Post-it 654 Yellow Notes 3 inch x 3 inch", price: 20, remainingStock: 40))
     }
 }
