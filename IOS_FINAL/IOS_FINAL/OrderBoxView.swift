@@ -36,7 +36,7 @@ struct OrderBoxView: View {
             VStack(alignment: .leading) {
                 Text(orderItem.itemId)
                 
-                Text("Price: \(orderItem.cost)")
+                Text("Price:$ \(orderItem.cost)")
                 
                 Text("Qty: \(orderItem.quantity)")
             }
