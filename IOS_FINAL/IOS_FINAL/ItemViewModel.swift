@@ -39,6 +39,8 @@ class ItemViewModel: ObservableObject {
                 let remainingStock = data["remainingStock"] as? Int ?? 0
                 let comments = data["orderItems"] as? [Comment] ?? []
                 
+                
+                
                 return Item(id: queryDocumentSnapshot.documentID, category: category, comments: comments, description: description, image: image, name: name, price: price, remainingStock: remainingStock)
             }
         }
@@ -128,9 +130,34 @@ class ItemViewModel: ObservableObject {
                  if let category = dataDescription?["category"] as? String {
                      item.category = category
                  }
-                 if let comments = dataDescription?["comments"] as? [Comment] {
+                 
+                 var item_comments :[Comment] = []
+                 for c in dataDescription?["comments"] as! [Dictionary<String, AnyObject>] {
+                                              var curr_comment = Comment(date: "", description: "", rate: 0, userName: "")
+                                                curr_comment.id =  c.description.id
+                                               if let date = c["date"] as? String {
+                                                   curr_comment.date = date
+                                               }
+                                               if let description = c["description"] as? String {
+                                                   curr_comment.description = description
+                                               }
+                                               if let rate = c["rate"] as? Int {
+                                                   curr_comment.rate = rate
+                                               }
+                     
+                                                if let userName = c["userName"] as? String {
+                                                   curr_comment.userName = userName
+                                               }
+                     
+                     
+                                             print("commentId-\(c.description.id) : \(c["rate"])")
+                                                item_comments.append(curr_comment)
+                                           }
+                 
+                 item.comments = item_comments
+                /* if let comments = dataDescription?["comments"] as? [Comment] {
                      item.comments = comments
-                 }
+                 }*/
                  if let description = dataDescription?["description"] as? String {
                      item.description = description
                  }
@@ -147,15 +174,6 @@ class ItemViewModel: ObservableObject {
                      item.remainingStock = remainingStock
                  }
                  
-                 
-                    //item.category = i.get("category") as! String
-            //item.comments = dataDescription?["comments"] as? [Comment] ?? []
-            //item.description = i.get("description") as? String ?? ""
-            //item.image = i.get("image") as! String
-            //item.name = i.get("name") as! String
-            //item.price = i.get("price") as! Int
-            //item.remainingStock = i.get("remainingStock") as! Int
-            //print("id:\( item.id), name:\(item.name)")
         }
         }
             return item
