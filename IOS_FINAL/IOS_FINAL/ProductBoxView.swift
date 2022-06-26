@@ -20,7 +20,7 @@ struct ProductBoxView: View {
             Text(item.name)
                 .lineLimit(2)
             
-            Text("Price: \(item.price)")
+            Text("Price:$ \(item.price)")
             
             Text("Qty: \(item.remainingStock)")
         }

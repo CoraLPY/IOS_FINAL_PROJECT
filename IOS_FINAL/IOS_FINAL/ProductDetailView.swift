@@ -65,7 +65,7 @@ struct ProductDetailView: View {
                     VStack(alignment: .leading) {
                         Text("Name: \(item.name)")
 
-                        Text("Price: \(item.price)")
+                        Text("Price:$ \(item.price)")
 
                         Text("Remaining stock: \(item.remainingStock)")
 

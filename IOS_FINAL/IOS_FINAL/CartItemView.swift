@@ -29,7 +29,7 @@ struct CartItemView: View {
             VStack(alignment: .leading) {
                 Text("\(cartItem.itemID)")
                 
-                Text("Price: \(cartItem.price)")
+                Text("Price: $\(cartItem.price)")
                 
                 Text("Qty: \(qty)")
             }
