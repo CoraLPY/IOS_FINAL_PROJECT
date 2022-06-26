@@ -18,13 +18,17 @@ struct ProductBoxView: View {
                 .frame(width: 150, height: 150)
             
             Text(item.name)
+                .lineLimit(2)
             
             Text("Price: \(item.price)")
             
             Text("Qty: \(item.remainingStock)")
         }
-        .padding()
-        .border(Color.black)
+        .padding(20)
+        //.border(Color.black)
+        .background()
+        .cornerRadius(8)
+        .shadow(radius: 10)
     }
 }
 

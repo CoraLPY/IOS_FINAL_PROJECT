@@ -10,11 +10,11 @@ import FirebaseFirestoreSwift
 
 struct Item: Codable, Identifiable, Equatable {
     @DocumentID var id: String?
-    let category: String
-    let comments: [Comment]?
-    let description: String
-    let image: String
-    let name: String
-    let price: Int
-    let remainingStock: Int
+    var category: String
+    var comments: [Comment]?
+    var description: String
+    var image: String
+    var name: String
+    var price: Int
+    var remainingStock: Int
 }

@@ -11,7 +11,8 @@ import FirebaseFirestoreSwift
 
 struct OrderItem: Codable, Identifiable, Equatable {
     @DocumentID var id: String?
-    let cost: Int
-    let itemId: String
-    let quantity: Int
+    var itemId: String
+    var cost: Int
+    var quantity: Int
+
 }

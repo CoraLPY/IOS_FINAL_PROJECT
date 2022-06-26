@@ -67,8 +67,7 @@ struct OrderBoxView_Previews: PreviewProvider {
 //    }
 
     static var previews: some View {
-
-        OrderBoxView(orderItem: OrderItem(cost: 10, itemId: "itemId", quantity: 1), date: "2021-01-05", status: "shipping")
+        OrderBoxView(orderItem: OrderItem(itemId:"A80tkdoxWpZNS6FdSW6U",cost: 10, quantity: 1), date: "2021-01-05", status: "shipping")
 //        OrderBoxViewDemo()
     }
 }

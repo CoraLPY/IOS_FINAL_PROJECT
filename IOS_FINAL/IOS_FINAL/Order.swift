@@ -10,14 +10,14 @@ import FirebaseFirestoreSwift
 struct Order: Codable, Identifiable, Equatable {
     @DocumentID var id: String?
     //var id: String = UUID().uuidString
-    let address: String
-    let cost: Int
-    let custId: String
-    let date: String
-    let orderItems: [OrderItem]?
-    let paymentMethod: String
-    let pickupMethod: String
-    let status: String
+    var address: String
+    var cost: Int
+    var custId: String
+    var date: String
+    var orderItems: [OrderItem]?
+    var paymentMethod: String
+    var pickupMethod: String
+    var status: String
 }
 
 /*let order = Order(address: "No. 219-1, Sec. 3, Zhongxiao E. Rd., Da’an Dist., Taipei City 106082, Taiwan (R.O.C.)", cost: 100, custId: "FWywzWzgx6VbwK9rh1IV7zgLhy13", date: "2021-01-05", orderItems:  [

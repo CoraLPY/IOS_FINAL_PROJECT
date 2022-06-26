@@ -47,7 +47,7 @@ struct ProductDetailView: View {
                             }
                         }
                     } label: {
-                        Image(item.image)
+                        Image(systemName: "cart.badge.plus")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 40, height: 40)
