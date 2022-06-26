@@ -42,28 +42,6 @@ class ItemViewModel: ObservableObject {
                 return Item(id: queryDocumentSnapshot.documentID, category: category, comments: comments, description: description, image: image, name: name, price: price, remainingStock: remainingStock)
             }
         }
-        
-        
-       /* db.collection("ITEMS").getDocuments { [self] (snap, err) in
-            if err != nil{
-            print(err!)
-                print((err?.localizedDescription)!)
-                return
-            }
-
-            for i in snap!.documents{
-                let id = i.documentID
-                let category = i.get("category") as! String
-                let comments = i.get("comments") as? [Comment] ?? []
-                let description = i.get("description") as! String
-                let image = i.get("image") as! String
-                let name = i.get("name") as! String
-                let price = i.get("price") as! Int
-                let remainingStock = i.get("remainingStock") as! Int
-
-                self.items.append(Item(id: id, category: category, comments: comments, description: description, image: image, name: name, price: price, remainingStock: remainingStock))
-            }
-        }
     }
        /* func findItem(itemId:String)  {
             db.collection("ITEMS").getDocuments { [self] (snap, err) in

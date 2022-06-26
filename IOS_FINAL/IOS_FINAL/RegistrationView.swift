@@ -56,7 +56,7 @@ struct RegistrationView: View {
                     Text("Password")
                         .padding(.horizontal)
                     
-                    TextField("password", text: $password)
+                    SecureField("password", text: $password)
                         .padding(.horizontal)
                     
                     Divider()
@@ -68,7 +68,7 @@ struct RegistrationView: View {
                     Text("Confirm Password")
                         .padding(.horizontal)
                     
-                    TextField("confirm password", text: $passwordConfirm)
+                    SecureField("confirm password", text: $passwordConfirm)
                         .padding(.horizontal)
                     
                     Divider()

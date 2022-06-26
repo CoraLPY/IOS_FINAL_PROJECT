@@ -12,6 +12,8 @@ struct ContentView: View {
     
     var body: some View {
         switch viewRouter.currentView {
+        case "SignInView":
+            SignInView()
         case "RegistrationView":
             RegistrationView()
         case "HomeView":

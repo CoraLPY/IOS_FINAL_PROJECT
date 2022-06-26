@@ -14,10 +14,11 @@ struct CommentView: View {
     var body: some View {
         HStack {
             VStack {
-                Image("notes1")
+                Image("comment_icon")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 75, height: 75)
+                    .clipShape(Circle())
                 
                 Text(comment.userName)
             }

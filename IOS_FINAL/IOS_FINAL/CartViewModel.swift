@@ -36,7 +36,7 @@ class CartViewModel: ObservableObject {
                     print("name=\(name)")
                     id = doc.documentID
                     print("inside id=\(id)")
-                    orderItems.append(OrderItem(cost: cartItem.price, itemId: id, quantity: cartItem.quantity))
+                    orderItems.append(OrderItem(itemId: id, cost: cartItem.price, quantity: cartItem.quantity))
                     print(orderItems)
                 }
                 ////////////////////////////////
@@ -63,7 +63,10 @@ class CartViewModel: ObservableObject {
             }
             
             let filterdDocuments = documents.filter { doc in
-                return doc.data()["custID"] as! String == Auth.auth().currentUser!.uid
+                var user = Auth.auth().currentUser
+                var uid = user?.uid ?? "nil"
+                
+                return doc.data()["custID"] as! String == uid
             }
             
             self.totalPrice = 0

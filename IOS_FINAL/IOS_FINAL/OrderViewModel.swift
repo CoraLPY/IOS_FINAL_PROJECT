@@ -23,7 +23,6 @@ class OrderViewModel: ObservableObject {
     func modifyOrder(order: Order) {
         do {
        
-    
             try db.collection("ORDERS").document(order.id ?? "").setData(["status":"cancel"],merge: true)
         } catch  {
             print(error)
@@ -31,8 +30,11 @@ class OrderViewModel: ObservableObject {
     }
     
     func listenChange() {
-        
-        db.collection("ORDERS").whereField("custId", isEqualTo: Auth.auth().currentUser!.uid).addSnapshotListener { querySnapshot, error in
+
+        var user = Auth.auth().currentUser
+        var uid = user?.uid ?? "nil"
+        //Auth.auth().currentUser!.uid ?? ""
+        db.collection("ORDERS").whereField("custId", isEqualTo: uid).addSnapshotListener { querySnapshot, error in
             if error != nil{
             print(error!)
 
