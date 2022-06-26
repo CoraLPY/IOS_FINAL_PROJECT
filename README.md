@@ -3,4 +3,4 @@
 ## IOS_FINAL_RESOURCES
 - Demo video (.mov)
 - Image of pages (.png)
-> https://drive.google.com/file/d/1coJdEQDW32DVOwzjWN4GOQvDtLC70ulu/view?usp=sharing
+> [Google Drive](https://drive.google.com/drive/folders/1w6h1BEOxXlCWHFxHWAXGlIxDRWI6B8V8?usp=sharing)
