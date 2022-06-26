@@ -10,31 +10,37 @@ import SwiftUI
 struct RecordItemRow: View {
 
     var orderitem : OrderItem
-    var item: Item
+    var name,image :String
     var body: some View {
         //
         HStack {
-            Image(item.image)
+            Image(image)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 80, height: 80)
                 .clipped()
-            
+          
+
             VStack(alignment: .leading) {
-                
-                Text("\(item.name)")
-                Text("\(orderitem.quantity)")
-                Text("\(orderitem.cost)")
+                Text("\(name)").foregroundColor(Color.ui.OrderBG)
             }
             Spacer()
+            VStack(alignment:.trailing){
+                Text("Qty:\(orderitem.quantity)").foregroundColor(Color.gray)
+                Text("$\(orderitem.cost)").foregroundColor(Color.gray)
+                
+            }
+            
+            
             
         }
+        .padding(10)
        
     }
 }
 
 struct RecordItemRow_Previews: PreviewProvider {
     static var previews: some View {
-        RecordItemRow(orderitem: OrderItem(id: "id",itemId:"A80tkdoxWpZNS6FdSW6U", cost: 100, quantity: 20),item:Item(id: "", category: "", comments: [], description: "", image: "", name: "", price: 0, remainingStock: 0))
+        RecordItemRow(orderitem: OrderItem(id: "id",itemId:"A80tkdoxWpZNS6FdSW6U", cost: 100, quantity: 20), name: "name", image: "image")
     }
 }

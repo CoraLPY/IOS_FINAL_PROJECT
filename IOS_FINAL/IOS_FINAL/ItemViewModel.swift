@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseFirestore
+import SwiftUI
 
 class ItemViewModel: ObservableObject {
    // @Published var items = [Item]()
@@ -95,12 +96,16 @@ class ItemViewModel: ObservableObject {
             }
         }*/
     
-     func getDocument(itemId: String) -> Item {
-         var item  =  Item(id: "", category: "", comments: [], description: "", image: "", name: "", price: 0, remainingStock: 0)
+     func getDocumentNameAndImage(itemId: String) -> (String,String) {
+         var image = ""
+        var name = ""
+
+         /*var item  =  Item(id: "", category: "", comments: [], description: "", image: "", name: "", price: 0, remainingStock: 0)
            let docRef = Firestore.firestore()
                .collection("ITEMS")
                .document("\(itemId)")
-
+         
+         
            // Get data
            docRef.getDocument { (document, error) in
                guard let document = document, document.exists else {
@@ -109,38 +114,34 @@ class ItemViewModel: ObservableObject {
                }
                let dataDescription = document.data()
                
-               if let category = dataDescription?["category"] as? String {
-                   item.category = category
+              
+               if let _image = dataDescription?["image"] as? String {
+                   image = _image
                }
-               if let comments = dataDescription?["comments"] as? [Comment] {
-                   item.comments = comments
+               if let _name = dataDescription?["name"] as? String {
+                   name = _name
                }
-               if let description = dataDescription?["description"] as? String {
-                   item.description = description
-               }
-               if let image = dataDescription?["image"] as? String {
-                   item.image = image
-               }
-               if let name = dataDescription?["name"] as? String {
-                   item.name = name
-               }
-               if let price = dataDescription?["price"] as? Int {
-                   item.price = price
-               }
-               if let remainingStock = dataDescription?["remainingStock"] as? Int {
-                   item.remainingStock = remainingStock
-                   
-               }
-               print("\(dataDescription?["remainingStock"]), \(dataDescription?["name"])")
-           }
-         
-         return item
+               
+           }*/
+         for i in items {
+             if(i.id == itemId){
+                 name = i.name
+                 image = i.image
+             }
+         }
+         return (name,image)
        }
     
     func findItemByitemId(itemId: String) -> Item {
         var item  =  Item(id: "", category: "", comments: [], description: "", image: "", name: "", price: 0, remainingStock: 0)
         
-
+        for i in items {
+            if(i.id == itemId){
+                print("~~~~\(i.name)~~~~")
+                print("~~~~\(i.image)~~~~")
+            }
+            
+        }
         
         db.collection("ITEMS").whereField("uid", isEqualTo:"A80tkdoxWpZNS6FdSW6U").getDocuments { [self] (snap, err) in
              if err != nil{

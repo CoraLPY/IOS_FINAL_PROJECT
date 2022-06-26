@@ -10,36 +10,111 @@ import SwiftUI
 struct RecordDetail: View {
    let record: Order
     @ObservedObject var  itemModel = ItemViewModel()
+    @State  var isProgess = false
+    @State private var showAlert = false
+    
+    
+    
+   
     
     var body: some View {
         ScrollView{
-            VStack(alignment:.leading){
-                Text("Date: \(record.date)")
-                Text("Shipping Address: \(record.address)")
-                Text("paymentMethod: \(record.paymentMethod)")
-                Text("pickupMethod: \(record.pickupMethod)")
+            VStack(alignment:.center,spacing: 10){
+                Group {
+                    HStack{
+                        Text("Date:")
+                             Spacer()
+                        Text("\(record.date)")
+                    }.padding(10)
+                    
+                    HStack{
+                        Text("Shipping Address:")
+                             Spacer()
+                        Text("\(record.address)")
+                    }.padding(10)
+                    
+                    HStack{
+                        Text("paymentMethod:")
+                             Spacer()
+                        Text("\(record.paymentMethod)")
+                    }.padding(10)
+                    
+                    HStack{
+                        Text("pickupMethod: ")
+                             Spacer()
+                        Text("\(record.pickupMethod)")
+                    }.padding(10)
+            
                 
+                Divider()
               
                 Text("Order Items:")
                     .bold()
-                //show order items
+                }
+                Divider()
                 
+                //show order items
                 ForEach(record.orderItems ?? []){ orderItem in
-                    //let i = itemModel.findItemByitemId(itemId: orderItem.itemId)
-                    let i = itemModel.getDocument(itemId: orderItem.itemId)
-                    //let _ = print("~~~~\(i.id)")
-                    RecordItemRow(orderitem: orderItem,item: i)
+                    let result = itemModel.getDocumentNameAndImage(itemId: orderItem.itemId)
+                    
+                    RecordItemRow(orderitem: orderItem, name: result.0, image: result.1)
+                    Divider()
                        
                     }
                 
-                Text("Total Cost:$ \(record.cost)")
+               
+                HStack{
+                    Text("Total Cost:")
+                         Spacer()
+                    Text("$ \(record.cost)")
+                }.padding(10)
+                HStack{
+                    Text("Status:")
+                         Spacer()
+                    Text("\(record.status)")
+                }.padding(10)
+                
+                   
+                
+                if(isProgess){
+                    Button(action: {
+                        showAlert = true
+                    }, label: {
+                        Text("Cancel")
+                            .fontWeight(.bold)
+                            .font(.system(size: 15))
+                            .padding()
+                            .background(Color.red)
+                            .cornerRadius(40)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .stroke(Color.red, lineWidth: 5)
+                            )
+                    }
+                    ) .padding(30)
+                    
+                        .alert("Warning", isPresented: $showAlert, actions: {
+                           Button("OK") {
+                               print("cancel")
+                           }
+                           Button("Cancel", role: .cancel) {
+                           }
+                           
+                        }, message: {
+                            Text("Do you want to delete the order?")
+                        })
 
-                Text("Status: \(record.status)")
-                
-                
             }
         }.navigationTitle("Record Detail")
+            .onAppear(){
+                isProgess = record.status == "progress" ? true : false
+            }
     }
+    
+
+}
 }
 
 struct RecordDetail_Previews: PreviewProvider {

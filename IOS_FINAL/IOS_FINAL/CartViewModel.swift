@@ -22,7 +22,7 @@ class CartViewModel: ObservableObject {
     func getOrderItems() -> [OrderItem] {
         var orderItems = [OrderItem]()
         for cartItem in cartItems {
-            orderItems.append(OrderItem(cost: cartItem.price, itemId: cartItem.itemID, quantity: cartItem.quantity))
+            orderItems.append(OrderItem(itemId: cartItem.itemID,cost: cartItem.price, quantity: cartItem.quantity))
         }
         return orderItems
     }
